@@ -93,7 +93,7 @@ class MoonEntity extends Entity {
             }
         }
 
-        if (!AbilityInformation.hasOsuAbility()) {
+        if (!AbilityInformation.hasOsuAbility() && BossManager.canUseAbilities()) {
             const currentBeat = this._getRelativeBeat(time);
             const currentRoundedBeat = Math.round(this._getRelativeBeat(time));
 
@@ -254,6 +254,10 @@ class MoonEntity extends Entity {
     }
 
     _getMaxSpeed() {
+        if (StateManager.getCurrentRoom() === 3) {
+            return Entity.MAX_SPEED / 2;
+        }
+
         return Entity.MAX_SPEED * this._forcedMaxSpeedMul;
     }
 

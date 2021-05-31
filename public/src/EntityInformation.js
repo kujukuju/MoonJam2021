@@ -157,4 +157,19 @@ class EntityInformation {
             EntityInformation._entitiesByID[entityID].destroy();
         }
     }
+
+    static destroyAllEntitiesExceptYou() {
+        const clientEntity = EntityInformation.getClientEntity();
+
+        const keys = Object.keys(EntityInformation._entitiesByID);
+        for (let i = 0; i < keys.length; i++) {
+            const entityID = keys[i];
+            const entity = EntityInformation._entitiesByID[entityID];
+            if (entity === clientEntity) {
+                continue;
+            }
+
+            entity.destroy();
+        }
+    }
 }

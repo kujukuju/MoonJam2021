@@ -9,6 +9,8 @@ class ParallaxManager {
         ParallaxManager._sprite.anchor.x = 0.5;
         ParallaxManager._sprite.anchor.y = -0.4;
         Renderer.boundaryContainer.addChild(ParallaxManager._sprite);
+
+        Renderer._application.renderer.plugins.prepare.upload(ParallaxManager._sprite, () => {});
     }
 
     static update(time, dt) {
@@ -28,8 +30,8 @@ class ParallaxManager {
             position[0] - center[0],
             position[1] - center[1],
         ];
-        delta[0] /= 2;
-        delta[1] /= 2;
+        delta[0] /= 2.5;
+        delta[1] /= 2.5;
 
         ParallaxManager._sprite.position.x = cityPos[0] + delta[0];
         ParallaxManager._sprite.position.y = cityPos[1] + delta[1];

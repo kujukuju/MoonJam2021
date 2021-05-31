@@ -2,7 +2,7 @@ class Entity {
     static SHADOW_TEXTURE = PIXI.Texture.from('assets/shadow.png');
     static VERTICAL_OFFSET = 140;
 
-    static HUMANOID_HIT = new Howl({src: 'assets/humanoid-hit.mp3', volume: 0.5 * MusicConstants.BASE});
+    static HUMANOID_HIT = new Howl({src: 'assets/humanoid-hit.mp3', volume: 0.7 * MusicConstants.BASE});
     static BAT_HIT = new Howl({src: 'assets/bat-hit.mp3', volume: 0.7 * MusicConstants.BASE});
 
     // these values are now percentages of max speed, I think
@@ -30,6 +30,8 @@ class Entity {
     _forcedMaxSpeedMul;
 
     _forcedImmortalUntil;
+
+    _isDead;
 
     constructor() {
         this._entityID = Entity._getNextEntityID();
@@ -60,6 +62,8 @@ class Entity {
         this._forcedMaxSpeedMul = 1;
 
         this._forcedImmortalUntil = 0;
+
+        this._isDead = false;
     }
 
     update(time, dt) {
@@ -253,12 +257,18 @@ class Entity {
         return Entity.VERTICAL_OFFSET + 40;
     }
 
+    isDead() {
+        return this._isDead;
+    }
+
     kill() {
         if (Date.now() <= this._forcedImmortalUntil) {
             return;
         }
 
         this.destroy();
+
+        this._isDead = true;
 
         const heartDead = new HeartDead();
         heartDead.setPosition(this._position[0], this._position[1]);

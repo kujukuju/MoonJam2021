@@ -80,6 +80,10 @@ class Osu extends Ability {
                 return false;
             }
 
+            if (entity instanceof BossEntity) {
+                return false;
+            }
+
             entity.setVisible();
 
             const position = entity.getPosition();

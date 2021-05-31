@@ -31290,210 +31290,39 @@ class LevelConstants {
                             },
                             {
                                 "height":0,
-                                "id":982,
+                                "id":996,
                                 "name":"",
                                 "point":true,
                                 "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"boss-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":-3616,
-                                "y":14897
-                            },
-                            {
-                                "height":0,
-                                "id":984,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":0
-                                    },
                                     {
                                         "name":"room",
                                         "type":"int",
                                         "value":3
                                     }],
                                 "rotation":0,
-                                "type":"statue-spawn",
+                                "type":"spawn",
                                 "visible":true,
                                 "width":0,
-                                "x":-3197,
-                                "y":15655
+                                "x":5684,
+                                "y":14728
                             },
                             {
                                 "height":0,
-                                "id":985,
+                                "id":997,
                                 "name":"",
                                 "point":true,
                                 "properties":[
                                     {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":0
-                                    },
-                                    {
                                         "name":"room",
                                         "type":"int",
-                                        "value":3
+                                        "value":4
                                     }],
                                 "rotation":0,
-                                "type":"statue-spawn",
+                                "type":"spawn",
                                 "visible":true,
                                 "width":0,
-                                "x":-3200,
-                                "y":14209
-                            },
-                            {
-                                "height":0,
-                                "id":986,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":0
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":3
-                                    }],
-                                "rotation":0,
-                                "type":"statue-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":-2621,
-                                "y":14212
-                            },
-                            {
-                                "height":0,
-                                "id":987,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":0
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":3
-                                    }],
-                                "rotation":0,
-                                "type":"statue-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":-2630,
-                                "y":15679
-                            },
-                            {
-                                "height":0,
-                                "id":988,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":0
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":3
-                                    }],
-                                "rotation":0,
-                                "type":"statue-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":-2115,
-                                "y":15670
-                            },
-                            {
-                                "height":0,
-                                "id":989,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":0
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":3
-                                    }],
-                                "rotation":0,
-                                "type":"statue-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":-1624,
-                                "y":15676
-                            },
-                            {
-                                "height":0,
-                                "id":991,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":0
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":3
-                                    }],
-                                "rotation":0,
-                                "type":"statue-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":-2106,
-                                "y":14215
-                            },
-                            {
-                                "height":0,
-                                "id":992,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":0
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":3
-                                    }],
-                                "rotation":0,
-                                "type":"statue-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":-1621,
-                                "y":14212
+                                "x":-844,
+                                "y":14920
                             }],
                         "opacity":1,
                         "type":"objectgroup",
@@ -32203,7 +32032,7 @@ class LevelConstants {
                 "y":0
             }],
         "nextlayerid":1027,
-        "nextobjectid":996,
+        "nextobjectid":998,
         "orientation":"orthogonal",
         "renderorder":"right-down",
         "tiledversion":"1.3.1",

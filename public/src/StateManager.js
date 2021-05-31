@@ -177,6 +177,7 @@ class StateManager {
         AbilityInformation.destroyAllAbilities();
         LevelManager.level.resetBeat();
         ChargeManager.reset();
+        BossManager.reset();
 
         if (EntityInformation.getClientEntity()) {
             EntityInformation.getClientEntity().clearMouseDown();

@@ -3125,6 +3125,10 @@ class MusicConstants {
             MusicConstants.BOSS_SONG_LABELS,
             new Howl({src: 'assets/boss-145bpm-bass.mp3', volume: MusicConstants.VOLUME * MusicConstants.BASE}),
         ],
+        'end': [
+            new Howl({src: 'assets/credits.mp3', volume: MusicConstants.VOLUME * MusicConstants.BASE}),
+            MusicConstants.NO_LABELS,
+        ],
     };
     // static ROOMS = [
     //     [

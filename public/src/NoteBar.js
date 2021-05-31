@@ -21,11 +21,17 @@ class NoteBar {
         const currentBeat = MusicManager.getCurrentBeat(time);
         const currentBeatFloor = Math.floor(currentBeat);
 
+        const bpm = MusicManager.getMSPerBeat();
         const clientEntity = EntityInformation.getClientEntity();
-        if (clientEntity) {
+        if (clientEntity && bpm) {
             NoteBar._sprite.alpha = Math.min(NoteBar._sprite.alpha + 0.001 * dt, 1);
         } else {
             NoteBar._sprite.alpha = Math.max(NoteBar._sprite.alpha - 0.001 * dt, 0);
+            for (const beatKey in NoteBar._noteSprites) {
+                const [leftSprite, rightSprite] = NoteBar._noteSprites[beatKey];
+                leftSprite.alpha = Math.max(leftSprite.alpha - 0.001 * dt, 0);
+                rightSprite.alpha = Math.max(rightSprite.alpha - 0.001 * dt, 0);
+            }
         }
 
         const keys = Object.keys(NoteBar._noteSprites);
@@ -58,7 +64,7 @@ class NoteBar {
             NoteBar._noteSprites[beat] = [leftSprite, rightSprite];
         }
 
-        if (clientEntity) {
+        if (clientEntity && bpm) {
             for (const beatKey in NoteBar._noteSprites) {
                 // maybe?
                 const remainingBeatsUntilBeat = beatKey - currentBeat;
