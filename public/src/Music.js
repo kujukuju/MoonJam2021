@@ -86,6 +86,18 @@ class Music {
         return delta / msPerBeat;
     }
 
+    getTimeFromBeat(beat) {
+        if (!this._playTime || !this._bpm) {
+            return 0;
+        }
+
+        const msPerBeat = 60000 / this._bpm;
+        const delta = beat * msPerBeat;
+
+        const thing = delta + (this._playTime + this._startOffset);
+        return thing - MusicConstants.CALIBRATION_OFFSET;
+    }
+
     getApproximateBeatTime(beat) {
         return this._playTime + this._startOffset + this.convertBeatToMilliseconds(beat);
     }

@@ -13,6 +13,7 @@ window.onload = () => {
     ChargeManager.initialize();
     EnemyArrowManager.initialize();
     ParallaxManager.initialize();
+    CoolMenuOverlayManager.initialize();
 
     Loop.initialize();
 

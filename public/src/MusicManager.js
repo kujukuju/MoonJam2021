@@ -126,6 +126,14 @@ class MusicManager {
         return MusicManager.music.getCurrentBeat(time);
     }
 
+    static getTimeFromBeat(beat) {
+        if (!MusicManager.music) {
+            return 0;
+        }
+
+        return MusicManager.music.getTimeFromBeat(beat);
+    }
+
     static forceSetBassPercentage(percent) {
         MusicManager._bassShift = percent;
     }

@@ -126,6 +126,7 @@ class Osu extends Ability {
                 let proposedTime = potential._getNextBeatTimeAfterTime(earliestDesiredTime);
                 const proposedBeatFourthNote = MusicManager.getCurrentBeat(proposedTime) * 4;
                 const roundedProposedBeat = Math.round(proposedBeatFourthNote);
+                proposedTime = MusicManager.getTimeFromBeat(roundedProposedBeat / 4);
                 // if (Math.abs(proposedBeatFourthNote - roundedProposedBeat) > 0.4) {
                 //     proposedTime = nextBeatTime;
                 // } else {

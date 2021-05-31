@@ -13,7 +13,7 @@ class ChargeManager {
 
     static _chargeGun = 0;
     static _chargeDash = 0;
-    static _chargeUlt = 1;
+    static _chargeUlt = 0;
 
     static _chargeGunStageStart = 0;
     static _chargeDashStageStart = 0;

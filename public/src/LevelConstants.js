@@ -26621,12 +26621,12 @@ class LevelConstants {
                                         "y":-120
                                     },
                                     {
-                                        "x":-2048,
-                                        "y":444
+                                        "x":-1992,
+                                        "y":1140
                                     },
                                     {
-                                        "x":-1144,
-                                        "y":728
+                                        "x":-992,
+                                        "y":1138
                                     }],
                                 "rotation":0,
                                 "type":"",
@@ -26697,12 +26697,12 @@ class LevelConstants {
                                 "name":"",
                                 "polygon":[
                                     {
-                                        "x":-1136,
-                                        "y":-20
+                                        "x":-1104,
+                                        "y":-760
                                     },
                                     {
-                                        "x":-2408,
-                                        "y":296
+                                        "x":-1990,
+                                        "y":-762
                                     },
                                     {
                                         "x":-2104,
@@ -28685,52 +28685,6 @@ class LevelConstants {
                             },
                             {
                                 "height":0,
-                                "id":832,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"bat-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":9621,
-                                "y":8733
-                            },
-                            {
-                                "height":0,
-                                "id":833,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"bat-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":10339,
-                                "y":8773
-                            },
-                            {
-                                "height":0,
                                 "id":834,
                                 "name":"",
                                 "point":true,
@@ -28820,29 +28774,6 @@ class LevelConstants {
                                 "width":0,
                                 "x":9245,
                                 "y":10394
-                            },
-                            {
-                                "height":0,
-                                "id":838,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"bat-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":9527,
-                                "y":10055
                             },
                             {
                                 "height":0,
@@ -29145,29 +29076,6 @@ class LevelConstants {
                             },
                             {
                                 "height":0,
-                                "id":853,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"bat-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":13806,
-                                "y":10300
-                            },
-                            {
-                                "height":0,
                                 "id":854,
                                 "name":"",
                                 "point":true,
@@ -29280,29 +29188,6 @@ class LevelConstants {
                                 "width":0,
                                 "x":12679,
                                 "y":11864
-                            },
-                            {
-                                "height":0,
-                                "id":859,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"bat-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":12467,
-                                "y":11973
                             },
                             {
                                 "height":0,
@@ -29467,29 +29352,6 @@ class LevelConstants {
                             },
                             {
                                 "height":0,
-                                "id":867,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"bat-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":11033,
-                                "y":13321
-                            },
-                            {
-                                "height":0,
                                 "id":868,
                                 "name":"",
                                 "point":true,
@@ -29510,52 +29372,6 @@ class LevelConstants {
                                 "width":0,
                                 "x":10097,
                                 "y":13048
-                            },
-                            {
-                                "height":0,
-                                "id":869,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"bat-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":10524,
-                                "y":13524
-                            },
-                            {
-                                "height":0,
-                                "id":870,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"bat-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":14452,
-                                "y":12667
                             },
                             {
                                 "height":0,
@@ -29674,29 +29490,6 @@ class LevelConstants {
                             },
                             {
                                 "height":0,
-                                "id":876,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"bat-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":14833,
-                                "y":12718
-                            },
-                            {
-                                "height":0,
                                 "id":877,
                                 "name":"",
                                 "point":true,
@@ -29740,29 +29533,6 @@ class LevelConstants {
                                 "width":0,
                                 "x":8145,
                                 "y":16100
-                            },
-                            {
-                                "height":0,
-                                "id":879,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"bat-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":7879,
-                                "y":16112
                             },
                             {
                                 "height":0,
@@ -29832,29 +29602,6 @@ class LevelConstants {
                                 "width":0,
                                 "x":8682,
                                 "y":16639
-                            },
-                            {
-                                "height":0,
-                                "id":883,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"bat-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":8312,
-                                "y":16539
                             },
                             {
                                 "height":0,
@@ -30019,29 +29766,6 @@ class LevelConstants {
                             },
                             {
                                 "height":0,
-                                "id":891,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"bat-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":13630,
-                                "y":15427
-                            },
-                            {
-                                "height":0,
                                 "id":892,
                                 "name":"",
                                 "point":true,
@@ -30177,52 +29901,6 @@ class LevelConstants {
                                 "width":0,
                                 "x":15988,
                                 "y":14885
-                            },
-                            {
-                                "height":0,
-                                "id":898,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"bat-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":15852,
-                                "y":14664
-                            },
-                            {
-                                "height":0,
-                                "id":899,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"bat-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":15818,
-                                "y":14818
                             },
                             {
                                 "height":0,
@@ -30364,29 +30042,6 @@ class LevelConstants {
                             },
                             {
                                 "height":0,
-                                "id":906,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"zombie-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":9803,
-                                "y":9515
-                            },
-                            {
-                                "height":0,
                                 "id":907,
                                 "name":"",
                                 "point":true,
@@ -30502,29 +30157,6 @@ class LevelConstants {
                             },
                             {
                                 "height":0,
-                                "id":912,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"zombie-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":14091,
-                                "y":9512
-                            },
-                            {
-                                "height":0,
                                 "id":913,
                                 "name":"",
                                 "point":true,
@@ -30568,29 +30200,6 @@ class LevelConstants {
                                 "width":0,
                                 "x":14394,
                                 "y":9664
-                            },
-                            {
-                                "height":0,
-                                "id":915,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"zombie-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":14155,
-                                "y":10018
                             },
                             {
                                 "height":0,
@@ -30939,75 +30548,6 @@ class LevelConstants {
                             },
                             {
                                 "height":0,
-                                "id":931,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"zombie-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":11712,
-                                "y":10700
-                            },
-                            {
-                                "height":0,
-                                "id":932,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"zombie-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":11968,
-                                "y":10640
-                            },
-                            {
-                                "height":0,
-                                "id":933,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"zombie-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":11844,
-                                "y":10988
-                            },
-                            {
-                                "height":0,
                                 "id":934,
                                 "name":"",
                                 "point":true,
@@ -31054,29 +30594,6 @@ class LevelConstants {
                             },
                             {
                                 "height":0,
-                                "id":936,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"zombie-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":12584,
-                                "y":10752
-                            },
-                            {
-                                "height":0,
                                 "id":937,
                                 "name":"",
                                 "point":true,
@@ -31097,52 +30614,6 @@ class LevelConstants {
                                 "width":0,
                                 "x":12296,
                                 "y":10884
-                            },
-                            {
-                                "height":0,
-                                "id":938,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"zombie-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":10784,
-                                "y":14120
-                            },
-                            {
-                                "height":0,
-                                "id":939,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"zombie-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":10640,
-                                "y":14380
                             },
                             {
                                 "height":0,
@@ -31330,52 +30801,6 @@ class LevelConstants {
                             },
                             {
                                 "height":0,
-                                "id":948,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"zombie-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":9844,
-                                "y":11816
-                            },
-                            {
-                                "height":0,
-                                "id":949,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"zombie-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":9584,
-                                "y":11892
-                            },
-                            {
-                                "height":0,
                                 "id":950,
                                 "name":"",
                                 "point":true,
@@ -31419,29 +30844,6 @@ class LevelConstants {
                                 "width":0,
                                 "x":9676,
                                 "y":12116
-                            },
-                            {
-                                "height":0,
-                                "id":952,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"zombie-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":10228,
-                                "y":18068
                             },
                             {
                                 "height":0,
@@ -31537,29 +30939,6 @@ class LevelConstants {
                             },
                             {
                                 "height":0,
-                                "id":957,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"zombie-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":10184,
-                                "y":18340
-                            },
-                            {
-                                "height":0,
                                 "id":958,
                                 "name":"",
                                 "point":true,
@@ -31652,52 +31031,6 @@ class LevelConstants {
                             },
                             {
                                 "height":0,
-                                "id":962,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"zombie-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":14144,
-                                "y":17464
-                            },
-                            {
-                                "height":0,
-                                "id":963,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"zombie-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":7284,
-                                "y":14612
-                            },
-                            {
-                                "height":0,
                                 "id":964,
                                 "name":"",
                                 "point":true,
@@ -31764,52 +31097,6 @@ class LevelConstants {
                                 "width":0,
                                 "x":7032,
                                 "y":14512
-                            },
-                            {
-                                "height":0,
-                                "id":967,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"zombie-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":7636,
-                                "y":14360
-                            },
-                            {
-                                "height":0,
-                                "id":970,
-                                "name":"",
-                                "point":true,
-                                "properties":[
-                                    {
-                                        "name":"delay",
-                                        "type":"int",
-                                        "value":1
-                                    },
-                                    {
-                                        "name":"room",
-                                        "type":"int",
-                                        "value":2
-                                    }],
-                                "rotation":0,
-                                "type":"zombie-spawn",
-                                "visible":true,
-                                "width":0,
-                                "x":7512,
-                                "y":14632
                             },
                             {
                                 "height":0,
@@ -32720,12 +32007,12 @@ class LevelConstants {
                                 "name":"",
                                 "polyline":[
                                     {
-                                        "x":-1204,
-                                        "y":4
+                                        "x":-526,
+                                        "y":-472
                                     },
                                     {
-                                        "x":-1204,
-                                        "y":408
+                                        "x":-1178,
+                                        "y":-474
                                     }],
                                 "rotation":0,
                                 "type":"",
@@ -32733,6 +32020,26 @@ class LevelConstants {
                                 "width":0,
                                 "x":552,
                                 "y":16536
+                            },
+                            {
+                                "height":0,
+                                "id":995,
+                                "name":"",
+                                "polyline":[
+                                    {
+                                        "x":-658,
+                                        "y":-474
+                                    },
+                                    {
+                                        "x":-1178,
+                                        "y":-474
+                                    }],
+                                "rotation":0,
+                                "type":"",
+                                "visible":true,
+                                "width":0,
+                                "x":606,
+                                "y":14488
                             }],
                         "opacity":1,
                         "type":"objectgroup",
@@ -32896,7 +32203,7 @@ class LevelConstants {
                 "y":0
             }],
         "nextlayerid":1027,
-        "nextobjectid":993,
+        "nextobjectid":996,
         "orientation":"orthogonal",
         "renderorder":"right-down",
         "tiledversion":"1.3.1",

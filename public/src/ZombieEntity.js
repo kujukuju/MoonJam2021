@@ -1,5 +1,5 @@
 class ZombieEntity extends EnemyEntity {
-    static TEXTURE = PIXI.Texture.from('assets/zombie-sheet.png');
+    static TEXTURE = PIXI.Texture.from('assets/zombie-sheet_recolour.png');
     static TEXTURES = [
         new PIXI.Texture(ZombieEntity.TEXTURE, new PIXI.Rectangle(0, 0, 290, 421)),
         new PIXI.Texture(ZombieEntity.TEXTURE, new PIXI.Rectangle(290, 0, 290, 421)),
