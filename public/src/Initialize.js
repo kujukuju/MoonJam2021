@@ -11,6 +11,7 @@ window.onload = () => {
     GroundRenderer.initialize();
     AudioStuff.initialize();
     ChargeManager.initialize();
+    EnemyArrowManager.initialize();
 
     Loop.initialize();
 };

@@ -1848,8 +1848,6 @@ class MusicConstants {
 
     static NO_LABELS = ``;
 
-    // static CALIBRATION_HOWL = new Howl({src: 'assets/samplebeat.wav', volume: MusicConstants.VOLUME});
-
     static ROOMS = {
         'none': [],
         'calibration': [

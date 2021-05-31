@@ -113,6 +113,8 @@ class Camera {
         Renderer.boundaryContainer.position.y = y;
         Renderer.shadowContainer.position.x = x;
         Renderer.shadowContainer.position.y = y;
+        Renderer.enemyArrowContainer.position.x = x;
+        Renderer.enemyArrowContainer.position.y = y;
         Renderer.arrowContainer.position.x = x;
         Renderer.arrowContainer.position.y = y;
         Renderer.deadBodyContainer.position.x = x;
@@ -128,6 +130,8 @@ class Camera {
         Renderer.boundaryContainer.scale.y = density;
         Renderer.shadowContainer.scale.x = density;
         Renderer.shadowContainer.scale.y = density;
+        Renderer.enemyArrowContainer.scale.x = density;
+        Renderer.enemyArrowContainer.scale.y = density;
         Renderer.arrowContainer.scale.x = density;
         Renderer.arrowContainer.scale.y = density;
         Renderer.deadBodyContainer.scale.x = density;

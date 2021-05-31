@@ -1,11 +1,11 @@
 class AlertAbility extends Ability {
     static TEXTURE = PIXI.Texture.from('assets/alert-sheet.png');
     static TEXTURES = [
-        new PIXI.Texture(AlertAbility.TEXTURE, new PIXI.Rectangle(0, 0, 50, 50)),
-        new PIXI.Texture(AlertAbility.TEXTURE, new PIXI.Rectangle(50, 0, 50, 50)),
-        new PIXI.Texture(AlertAbility.TEXTURE, new PIXI.Rectangle(100, 0, 50, 50)),
-        new PIXI.Texture(AlertAbility.TEXTURE, new PIXI.Rectangle(150, 0, 50, 50)),
-        new PIXI.Texture(AlertAbility.TEXTURE, new PIXI.Rectangle(200, 0, 50, 50)),
+        new PIXI.Texture(AlertAbility.TEXTURE, new PIXI.Rectangle(0, 0, 200, 200)),
+        new PIXI.Texture(AlertAbility.TEXTURE, new PIXI.Rectangle(200, 0, 200, 200)),
+        new PIXI.Texture(AlertAbility.TEXTURE, new PIXI.Rectangle(200 * 2, 0, 200, 200)),
+        new PIXI.Texture(AlertAbility.TEXTURE, new PIXI.Rectangle(200 * 3, 0, 200, 200)),
+        new PIXI.Texture(AlertAbility.TEXTURE, new PIXI.Rectangle(200 * 4, 0, 200, 200)),
     ];
 
     static ANIMATION_DURATION = 400;
@@ -24,8 +24,6 @@ class AlertAbility extends Ability {
         this._sprite = new PIXI.AnimatedSprite(AlertAbility.TEXTURES);
         this._sprite.anchor.x = 0.5;
         this._sprite.anchor.y = 1;
-        this._sprite.scale.x = 4;
-        this._sprite.scale.y = 4;
         this._sprite.position.x = entity.getPosition()[0];
         this._sprite.position.y = entity.getPosition()[1] - entity.getHeight();
         this._sprite.autoUpdate = false;
@@ -39,6 +37,7 @@ class AlertAbility extends Ability {
         const ownerPosition = this._owner.getPosition();
         this._sprite.position.x = ownerPosition[0];
         this._sprite.position.y = ownerPosition[1] - this._owner.getHeight();
+        this._sprite.zIndex = ownerPosition[1];
 
         const progress = Math.min(this._deltaTime / AlertAbility.ANIMATION_DURATION, 1);
         const frame = Math.min(Math.floor(progress * this._sprite.textures.length), this._sprite.textures.length - 1);

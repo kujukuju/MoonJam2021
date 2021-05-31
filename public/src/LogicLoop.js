@@ -18,5 +18,6 @@ class LogicLoop {
 
         GateManager.update(time, dt);
         ChargeManager.update(time, dt);
+        EnemyArrowManager.update(time, dt);
     }
 }

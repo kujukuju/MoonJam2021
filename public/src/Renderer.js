@@ -5,6 +5,7 @@ class Renderer {
     static levelShadowContainer;
     static boundaryContainer;
     static shadowContainer;
+    static enemyArrowContainer;
     static arrowContainer;
     static deadBodyContainer;
     static container;
@@ -30,6 +31,7 @@ class Renderer {
         Renderer.levelShadowContainer = new PIXI.Container();
         Renderer.boundaryContainer = new PIXI.Container();
         Renderer.shadowContainer = new PIXI.Container();
+        Renderer.enemyArrowContainer = new PIXI.Container();
         Renderer.arrowContainer = new PIXI.Container();
         Renderer.deadBodyContainer = new PIXI.Container();
         Renderer.container = new PIXI.Container();
@@ -41,6 +43,7 @@ class Renderer {
         Renderer._application.stage.addChild(Renderer.levelShadowContainer);
         Renderer._application.stage.addChild(Renderer.boundaryContainer);
         Renderer._application.stage.addChild(Renderer.shadowContainer);
+        Renderer._application.stage.addChild(Renderer.enemyArrowContainer);
         Renderer._application.stage.addChild(Renderer.arrowContainer);
         Renderer._application.stage.addChild(Renderer.deadBodyContainer);
         Renderer._application.stage.addChild(Renderer.container);

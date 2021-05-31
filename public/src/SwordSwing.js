@@ -1,5 +1,5 @@
 class SwordSwing extends Ability {
-    static TEXTURE = PIXI.Texture.from('assets/sword-sheet.png');
+    static TEXTURE = PIXI.Texture.from('assets/sword-sheet2.png');
     static WIDTH = 256;
     static HEIGHT = 239;
     static TEXTURES = [
