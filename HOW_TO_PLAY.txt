@@ -1,0 +1,17 @@
+Jesse Anime: Vampire Hunter
+
+Cleanse the town of evil and defeat the manipulating entity
+
+Made by:
+Kuju, ShinjiTheRealG, ORANGEJUICE
+
+How To Play:
+Move with WASD
+Left click for your sword
+Right click for your gun
+Shift to dash
+Space for your ultimate ability
+
+Charge your abilities by getting kills
+
+Issue inputs on the beat (but movement is continuous)
