@@ -101,8 +101,8 @@ class Osu extends Ability {
 
         const currentBeat = MusicManager.getCurrentBeat(time);
         const startBeat = Math.round(currentBeat);
-        const startTime = MusicManager.convertBeatToMilliseconds(startBeat - currentBeat) + time;
-        const minimumInterval = MusicManager.convertBeatToMilliseconds(1) / 4;
+        const startTime = MusicManager.getTimeFromBeat(startBeat); // MusicManager.convertBeatToMilliseconds(startBeat - currentBeat) + time;
+        const minimumInterval = MusicManager.convertBeatToMilliseconds(1) / 4.1;
 
         let currentSequence = 0;
         const lastPosition = [ownerPosition[0], ownerPosition[1]];
@@ -128,14 +128,9 @@ class Osu extends Ability {
             for (let i = 0; i < potentialEntities.length; i++) {
                 const potential = potentialEntities[i];
                 let proposedTime = potential._getNextBeatTimeAfterTime(earliestDesiredTime);
-                const proposedBeatFourthNote = MusicManager.getCurrentBeat(proposedTime) * 4;
-                const roundedProposedBeat = Math.round(proposedBeatFourthNote);
-                proposedTime = MusicManager.getTimeFromBeat(roundedProposedBeat / 4);
-                // if (Math.abs(proposedBeatFourthNote - roundedProposedBeat) > 0.4) {
-                //     proposedTime = nextBeatTime;
-                // } else {
-                //     proposedTime = startTime + MusicManager.convertBeatToMilliseconds(roundedProposedBeat * 4);
-                // }
+                // const proposedBeatFourthNote = MusicManager.getCurrentBeat(proposedTime) * 2;
+                // const roundedProposedBeat = Math.round(proposedBeatFourthNote);
+                // proposedTime = MusicManager.getTimeFromBeat(roundedProposedBeat / 2);
                 proposedTime = Math.min(proposedTime, nextBeatTime);
 
                 if (proposedTime - earliestDesiredTime < minimumInterval) {
@@ -159,7 +154,7 @@ class Osu extends Ability {
 
             if (bestPosition) {
                 // we found an entity for this beat, for better or worse lol
-                earliestDesiredTime = bestTime
+                earliestDesiredTime = bestTime + MusicManager.convertBeatToMilliseconds(1) / 4.2;
                 this._sequence.push([bestTime, bestPosition, bestEntityID]);
 
                 const screenPosition = Camera.convertToScreenSpace(bestPosition, Osu.ZOOM_DENSITY);
@@ -193,7 +188,7 @@ class Osu extends Ability {
 
                 potentialEntities.splice(bestIndex, 1);
             } else {
-                earliestDesiredTime += 100;
+                earliestDesiredTime += MusicManager.convertBeatToMilliseconds(1) / 4;
             }
 
             if (potentialEntities.length === 0) {
@@ -239,6 +234,10 @@ class Osu extends Ability {
         }
 
         if (this._deltaTime >= Osu.DURATION) {
+            this._stage = 1;
+        }
+
+        if (this._sequence.length === 0) {
             this._stage = 1;
         }
 

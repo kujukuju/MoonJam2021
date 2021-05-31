@@ -246,6 +246,9 @@ class MoonEntity extends Entity {
     kill() {
         super.kill();
 
+        if (Date.now() <= this._forcedImmortalUntil) {
+            return;
+        }
         AbilityInformation.addAbility(new DeadAbility(this, DeadAbility.MOON_TEXTURE));
     }
 
