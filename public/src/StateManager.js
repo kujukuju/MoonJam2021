@@ -131,6 +131,10 @@ class StateManager {
 
                 if (StateManager._currentRoom === 0) {
                     GateManager.openGate1();
+                } else if (StateManager._currentRoom === 1) {
+                    GateManager.openGate2();
+                } else if (StateManager._currentRoom === 2) {
+                    GateManager.openGate3();
                 }
             }
         }

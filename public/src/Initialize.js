@@ -12,6 +12,11 @@ window.onload = () => {
     AudioStuff.initialize();
     ChargeManager.initialize();
     EnemyArrowManager.initialize();
+    ParallaxManager.initialize();
 
     Loop.initialize();
+
+    setTimeout(() => {
+        document.getElementById('loading').style.display = 'none';
+    }, 3000);
 };

@@ -261,14 +261,62 @@ class LevelConstants {
                 "y":0
             },
             {
+                "id":1015,
+                "image":"FENCE_REPEATING_3.png",
+                "name":"Copy of Image Layer 824",
+                "offsetx":6162.66666666667,
+                "offsety":6417.69696969697,
+                "opacity":1,
+                "type":"imagelayer",
+                "visible":true,
+                "x":0,
+                "y":0
+            },
+            {
+                "id":1017,
+                "image":"FENCE 2.png",
+                "name":"Copy of Copy of Image Layer 824",
+                "offsetx":5777.57575757576,
+                "offsety":9815.51515151515,
+                "opacity":1,
+                "type":"imagelayer",
+                "visible":true,
+                "x":0,
+                "y":0
+            },
+            {
+                "id":1018,
+                "image":"FENCE_REPEATING_3.png",
+                "name":"Copy of Copy of Copy of Image Layer 824",
+                "offsetx":6162.30303030303,
+                "offsety":8852.60606060606,
+                "opacity":1,
+                "type":"imagelayer",
+                "visible":true,
+                "x":0,
+                "y":0
+            },
+            {
+                "id":1016,
+                "image":"FENCE_REPEATING_3.png",
+                "name":"Copy of Copy of Image Layer 824",
+                "offsetx":6174.78787878788,
+                "offsety":6744.9696969697,
+                "opacity":1,
+                "type":"imagelayer",
+                "visible":true,
+                "x":0,
+                "y":0
+            },
+            {
                 "id":969,
                 "layers":[
                     {
                         "id":971,
-                        "image":"cathedral_test_1.png",
-                        "name":"Image Layer 788",
-                        "offsetx":-2776,
-                        "offsety":12440,
+                        "image":"cath-ground-2.png",
+                        "name":"shadowcath",
+                        "offsetx":-4001,
+                        "offsety":13155,
                         "opacity":1,
                         "type":"imagelayer",
                         "visible":true,
@@ -276,11 +324,11 @@ class LevelConstants {
                         "y":0
                     },
                     {
-                        "id":972,
-                        "image":"VAMP SPRITE JUMP 2.png",
-                        "name":"Copy of Image Layer 788",
-                        "offsetx":-1648,
-                        "offsety":13752,
+                        "id":1021,
+                        "image":"cath-ground-1.png",
+                        "name":"cathshadow",
+                        "offsetx":-3998,
+                        "offsety":16614,
                         "opacity":1,
                         "type":"imagelayer",
                         "visible":true,
@@ -290,9 +338,9 @@ class LevelConstants {
                     {
                         "id":973,
                         "image":"BRIDGE REPEATING.png",
-                        "name":"Copy of Copy of Image Layer 788",
-                        "offsetx":3720,
-                        "offsety":14264,
+                        "name":"shadow",
+                        "offsetx":2765,
+                        "offsety":13173,
                         "opacity":1,
                         "type":"imagelayer",
                         "visible":true,
@@ -302,9 +350,57 @@ class LevelConstants {
                     {
                         "id":974,
                         "image":"BRIDGE REPEATING.png",
-                        "name":"Copy of Copy of Copy of Image Layer 788",
-                        "offsetx":2052.9696969697,
-                        "offsety":14273.9393939394,
+                        "name":"shadow",
+                        "offsetx":1104,
+                        "offsety":13186,
+                        "opacity":1,
+                        "type":"imagelayer",
+                        "visible":true,
+                        "x":0,
+                        "y":0
+                    },
+                    {
+                        "id":1019,
+                        "image":"fuck-cath-1.png",
+                        "name":"shadow",
+                        "offsetx":-387,
+                        "offsety":13438,
+                        "opacity":1,
+                        "type":"imagelayer",
+                        "visible":true,
+                        "x":0,
+                        "y":0
+                    },
+                    {
+                        "id":1020,
+                        "image":"cath-flipped.png",
+                        "name":"shadow",
+                        "offsetx":4426,
+                        "offsety":13414,
+                        "opacity":1,
+                        "type":"imagelayer",
+                        "visible":true,
+                        "x":0,
+                        "y":0
+                    },
+                    {
+                        "id":1023,
+                        "image":"cathedral1.png",
+                        "name":"shadow",
+                        "offsetx":-3999,
+                        "offsety":14136,
+                        "opacity":1,
+                        "type":"imagelayer",
+                        "visible":true,
+                        "x":0,
+                        "y":0
+                    },
+                    {
+                        "id":1024,
+                        "image":"cathedral2.png",
+                        "name":"shadow",
+                        "offsetx":-3992,
+                        "offsety":12428,
                         "opacity":1,
                         "type":"imagelayer",
                         "visible":true,
@@ -9937,7 +10033,7 @@ class LevelConstants {
                     },
                     {
                         "id":916,
-                        "image":"FENCE_3.png",
+                        "image":"FENCE_REPEATING_3.png",
                         "name":"Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Image Layer 701",
                         "offsetx":6152.84848484848,
                         "offsety":5487.15151515152,
@@ -11855,10 +11951,6 @@ class LevelConstants {
                                         "y":-1748
                                     },
                                     {
-                                        "x":-857,
-                                        "y":-2475
-                                    },
-                                    {
                                         "x":-1863,
                                         "y":-3436
                                     },
@@ -11903,12 +11995,12 @@ class LevelConstants {
                                 "name":"",
                                 "polygon":[
                                     {
-                                        "x":276,
-                                        "y":-503
+                                        "x":424,
+                                        "y":-541
                                     },
                                     {
-                                        "x":772,
-                                        "y":-1500
+                                        "x":1090,
+                                        "y":-1580
                                     },
                                     {
                                         "x":-752,
@@ -26413,12 +26505,12 @@ class LevelConstants {
                                         "y":0
                                     },
                                     {
-                                        "x":-4336,
-                                        "y":-88
+                                        "x":-5564,
+                                        "y":-72
                                     },
                                     {
-                                        "x":-4460,
-                                        "y":860
+                                        "x":-5688,
+                                        "y":876
                                     },
                                     {
                                         "x":-48,
@@ -26441,12 +26533,12 @@ class LevelConstants {
                                         "y":0
                                     },
                                     {
-                                        "x":-4400,
-                                        "y":32
+                                        "x":-5632,
+                                        "y":48
                                     },
                                     {
-                                        "x":-4336,
-                                        "y":1420
+                                        "x":-5568,
+                                        "y":1436
                                     },
                                     {
                                         "x":364,
@@ -26465,20 +26557,20 @@ class LevelConstants {
                                 "name":"",
                                 "polygon":[
                                     {
-                                        "x":-248,
-                                        "y":-352
+                                        "x":-1448,
+                                        "y":-292
                                     },
                                     {
-                                        "x":668,
-                                        "y":956
+                                        "x":-532,
+                                        "y":1016
                                     },
                                     {
-                                        "x":1820,
-                                        "y":-132
+                                        "x":620,
+                                        "y":-72
                                     },
                                     {
-                                        "x":12,
-                                        "y":-752
+                                        "x":-1188,
+                                        "y":-692
                                     }],
                                 "rotation":0,
                                 "type":"",
@@ -26493,20 +26585,20 @@ class LevelConstants {
                                 "name":"",
                                 "polygon":[
                                     {
-                                        "x":0,
-                                        "y":0
+                                        "x":-1217,
+                                        "y":24
                                     },
                                     {
-                                        "x":0,
-                                        "y":-1996
+                                        "x":-1220,
+                                        "y":-2036
                                     },
                                     {
-                                        "x":-176,
-                                        "y":-1992
+                                        "x":-1396,
+                                        "y":-2032
                                     },
                                     {
-                                        "x":-172,
-                                        "y":0
+                                        "x":-1389,
+                                        "y":24
                                     }],
                                 "rotation":0,
                                 "type":"",
@@ -26521,20 +26613,20 @@ class LevelConstants {
                                 "name":"",
                                 "polygon":[
                                     {
-                                        "x":0,
-                                        "y":0
+                                        "x":-1180,
+                                        "y":-104
                                     },
                                     {
-                                        "x":-880,
-                                        "y":-16
+                                        "x":-2060,
+                                        "y":-120
                                     },
                                     {
-                                        "x":-868,
-                                        "y":548
+                                        "x":-2048,
+                                        "y":444
                                     },
                                     {
-                                        "x":116,
-                                        "y":564
+                                        "x":-1144,
+                                        "y":728
                                     }],
                                 "rotation":0,
                                 "type":"",
@@ -26549,20 +26641,20 @@ class LevelConstants {
                                 "name":"",
                                 "polygon":[
                                     {
-                                        "x":0,
-                                        "y":0
+                                        "x":-1232,
+                                        "y":172
                                     },
                                     {
-                                        "x":-76,
-                                        "y":1404
+                                        "x":-1308,
+                                        "y":1576
                                     },
                                     {
-                                        "x":1788,
-                                        "y":1608
+                                        "x":556,
+                                        "y":1780
                                     },
                                     {
-                                        "x":2012,
-                                        "y":144
+                                        "x":780,
+                                        "y":316
                                     }],
                                 "rotation":0,
                                 "type":"",
@@ -26577,20 +26669,20 @@ class LevelConstants {
                                 "name":"",
                                 "polygon":[
                                     {
-                                        "x":0,
+                                        "x":-1148,
+                                        "y":-112
+                                    },
+                                    {
+                                        "x":-1544,
+                                        "y":856
+                                    },
+                                    {
+                                        "x":-324,
+                                        "y":1248
+                                    },
+                                    {
+                                        "x":-72,
                                         "y":0
-                                    },
-                                    {
-                                        "x":-396,
-                                        "y":968
-                                    },
-                                    {
-                                        "x":824,
-                                        "y":1360
-                                    },
-                                    {
-                                        "x":1076,
-                                        "y":112
                                     }],
                                 "rotation":0,
                                 "type":"",
@@ -26605,20 +26697,20 @@ class LevelConstants {
                                 "name":"",
                                 "polygon":[
                                     {
-                                        "x":0,
-                                        "y":0
+                                        "x":-1136,
+                                        "y":-20
                                     },
                                     {
-                                        "x":-876,
-                                        "y":220
+                                        "x":-2408,
+                                        "y":296
                                     },
                                     {
-                                        "x":-572,
-                                        "y":1036
+                                        "x":-2104,
+                                        "y":1112
                                     },
                                     {
-                                        "x":472,
-                                        "y":500
+                                        "x":-664,
+                                        "y":480
                                     }],
                                 "rotation":0,
                                 "type":"",
@@ -26633,20 +26725,20 @@ class LevelConstants {
                                 "name":"",
                                 "polygon":[
                                     {
-                                        "x":0,
-                                        "y":0
+                                        "x":-1164,
+                                        "y":-4
                                     },
                                     {
-                                        "x":-3832,
-                                        "y":-20
+                                        "x":-5336,
+                                        "y":-12
                                     },
                                     {
-                                        "x":-3892,
-                                        "y":1092
+                                        "x":-5396,
+                                        "y":1100
                                     },
                                     {
-                                        "x":64,
-                                        "y":1092
+                                        "x":-1152,
+                                        "y":1100
                                     }],
                                 "rotation":0,
                                 "type":"",
@@ -26661,20 +26753,20 @@ class LevelConstants {
                                 "name":"",
                                 "polygon":[
                                     {
-                                        "x":0,
-                                        "y":0
+                                        "x":-1220,
+                                        "y":-84
                                     },
                                     {
-                                        "x":-1236,
-                                        "y":-16
+                                        "x":-2456,
+                                        "y":-100
                                     },
                                     {
-                                        "x":-1364,
-                                        "y":3028
+                                        "x":-2584,
+                                        "y":2944
                                     },
                                     {
-                                        "x":20,
-                                        "y":3128
+                                        "x":-1200,
+                                        "y":3044
                                     }],
                                 "rotation":0,
                                 "type":"",
@@ -26689,20 +26781,20 @@ class LevelConstants {
                                 "name":"",
                                 "polygon":[
                                     {
-                                        "x":0,
-                                        "y":0
+                                        "x":-1196,
+                                        "y":-24
                                     },
                                     {
-                                        "x":-3604,
-                                        "y":8
+                                        "x":-4800,
+                                        "y":-16
                                     },
                                     {
-                                        "x":-3628,
-                                        "y":1288
+                                        "x":-4824,
+                                        "y":1264
                                     },
                                     {
-                                        "x":4,
-                                        "y":1412
+                                        "x":-1192,
+                                        "y":1388
                                     }],
                                 "rotation":0,
                                 "type":"",
@@ -31736,6 +31828,385 @@ class LevelConstants {
                                 "width":0,
                                 "x":6776,
                                 "y":8468
+                            },
+                            {
+                                "height":0,
+                                "id":973,
+                                "name":"",
+                                "polygon":[
+                                    {
+                                        "x":0,
+                                        "y":0
+                                    },
+                                    {
+                                        "x":202,
+                                        "y":572
+                                    },
+                                    {
+                                        "x":668,
+                                        "y":568
+                                    },
+                                    {
+                                        "x":698,
+                                        "y":-170
+                                    }],
+                                "rotation":0,
+                                "type":"",
+                                "visible":true,
+                                "width":0,
+                                "x":5274,
+                                "y":13664
+                            },
+                            {
+                                "height":0,
+                                "id":974,
+                                "name":"",
+                                "polygon":[
+                                    {
+                                        "x":0,
+                                        "y":0
+                                    },
+                                    {
+                                        "x":-114,
+                                        "y":0
+                                    },
+                                    {
+                                        "x":-146,
+                                        "y":434
+                                    },
+                                    {
+                                        "x":50,
+                                        "y":632
+                                    }],
+                                "rotation":0,
+                                "type":"",
+                                "visible":true,
+                                "width":0,
+                                "x":5990,
+                                "y":15246
+                            },
+                            {
+                                "height":0,
+                                "id":975,
+                                "name":"",
+                                "polygon":[
+                                    {
+                                        "x":0,
+                                        "y":0
+                                    },
+                                    {
+                                        "x":-122,
+                                        "y":2
+                                    },
+                                    {
+                                        "x":-118,
+                                        "y":692
+                                    },
+                                    {
+                                        "x":-12,
+                                        "y":692
+                                    }],
+                                "rotation":0,
+                                "type":"",
+                                "visible":true,
+                                "width":0,
+                                "x":6012,
+                                "y":13816
+                            },
+                            {
+                                "height":0,
+                                "id":977,
+                                "name":"",
+                                "polygon":[
+                                    {
+                                        "x":0,
+                                        "y":0
+                                    },
+                                    {
+                                        "x":0,
+                                        "y":924
+                                    },
+                                    {
+                                        "x":114,
+                                        "y":924
+                                    },
+                                    {
+                                        "x":114,
+                                        "y":-30
+                                    }],
+                                "rotation":0,
+                                "type":"",
+                                "visible":true,
+                                "width":0,
+                                "x":6530,
+                                "y":7390
+                            },
+                            {
+                                "height":0,
+                                "id":978,
+                                "name":"",
+                                "polygon":[
+                                    {
+                                        "x":0,
+                                        "y":0
+                                    },
+                                    {
+                                        "x":2,
+                                        "y":632
+                                    },
+                                    {
+                                        "x":142,
+                                        "y":628
+                                    },
+                                    {
+                                        "x":124,
+                                        "y":2
+                                    }],
+                                "rotation":0,
+                                "type":"",
+                                "visible":true,
+                                "width":0,
+                                "x":6498,
+                                "y":9080
+                            },
+                            {
+                                "height":0,
+                                "id":980,
+                                "name":"",
+                                "polygon":[
+                                    {
+                                        "x":-1228,
+                                        "y":20
+                                    },
+                                    {
+                                        "x":-1394,
+                                        "y":17
+                                    },
+                                    {
+                                        "x":-1431,
+                                        "y":1468
+                                    },
+                                    {
+                                        "x":-1334,
+                                        "y":1568
+                                    },
+                                    {
+                                        "x":-1270,
+                                        "y":1494
+                                    }],
+                                "rotation":0,
+                                "type":"",
+                                "visible":true,
+                                "width":0,
+                                "x":630,
+                                "y":14997
+                            },
+                            {
+                                "height":0,
+                                "id":982,
+                                "name":"",
+                                "point":true,
+                                "properties":[
+                                    {
+                                        "name":"delay",
+                                        "type":"int",
+                                        "value":1
+                                    },
+                                    {
+                                        "name":"room",
+                                        "type":"int",
+                                        "value":2
+                                    }],
+                                "rotation":0,
+                                "type":"boss-spawn",
+                                "visible":true,
+                                "width":0,
+                                "x":-3616,
+                                "y":14897
+                            },
+                            {
+                                "height":0,
+                                "id":984,
+                                "name":"",
+                                "point":true,
+                                "properties":[
+                                    {
+                                        "name":"delay",
+                                        "type":"int",
+                                        "value":0
+                                    },
+                                    {
+                                        "name":"room",
+                                        "type":"int",
+                                        "value":3
+                                    }],
+                                "rotation":0,
+                                "type":"statue-spawn",
+                                "visible":true,
+                                "width":0,
+                                "x":-3197,
+                                "y":15655
+                            },
+                            {
+                                "height":0,
+                                "id":985,
+                                "name":"",
+                                "point":true,
+                                "properties":[
+                                    {
+                                        "name":"delay",
+                                        "type":"int",
+                                        "value":0
+                                    },
+                                    {
+                                        "name":"room",
+                                        "type":"int",
+                                        "value":3
+                                    }],
+                                "rotation":0,
+                                "type":"statue-spawn",
+                                "visible":true,
+                                "width":0,
+                                "x":-3200,
+                                "y":14209
+                            },
+                            {
+                                "height":0,
+                                "id":986,
+                                "name":"",
+                                "point":true,
+                                "properties":[
+                                    {
+                                        "name":"delay",
+                                        "type":"int",
+                                        "value":0
+                                    },
+                                    {
+                                        "name":"room",
+                                        "type":"int",
+                                        "value":3
+                                    }],
+                                "rotation":0,
+                                "type":"statue-spawn",
+                                "visible":true,
+                                "width":0,
+                                "x":-2621,
+                                "y":14212
+                            },
+                            {
+                                "height":0,
+                                "id":987,
+                                "name":"",
+                                "point":true,
+                                "properties":[
+                                    {
+                                        "name":"delay",
+                                        "type":"int",
+                                        "value":0
+                                    },
+                                    {
+                                        "name":"room",
+                                        "type":"int",
+                                        "value":3
+                                    }],
+                                "rotation":0,
+                                "type":"statue-spawn",
+                                "visible":true,
+                                "width":0,
+                                "x":-2630,
+                                "y":15679
+                            },
+                            {
+                                "height":0,
+                                "id":988,
+                                "name":"",
+                                "point":true,
+                                "properties":[
+                                    {
+                                        "name":"delay",
+                                        "type":"int",
+                                        "value":0
+                                    },
+                                    {
+                                        "name":"room",
+                                        "type":"int",
+                                        "value":3
+                                    }],
+                                "rotation":0,
+                                "type":"statue-spawn",
+                                "visible":true,
+                                "width":0,
+                                "x":-2115,
+                                "y":15670
+                            },
+                            {
+                                "height":0,
+                                "id":989,
+                                "name":"",
+                                "point":true,
+                                "properties":[
+                                    {
+                                        "name":"delay",
+                                        "type":"int",
+                                        "value":0
+                                    },
+                                    {
+                                        "name":"room",
+                                        "type":"int",
+                                        "value":3
+                                    }],
+                                "rotation":0,
+                                "type":"statue-spawn",
+                                "visible":true,
+                                "width":0,
+                                "x":-1624,
+                                "y":15676
+                            },
+                            {
+                                "height":0,
+                                "id":991,
+                                "name":"",
+                                "point":true,
+                                "properties":[
+                                    {
+                                        "name":"delay",
+                                        "type":"int",
+                                        "value":0
+                                    },
+                                    {
+                                        "name":"room",
+                                        "type":"int",
+                                        "value":3
+                                    }],
+                                "rotation":0,
+                                "type":"statue-spawn",
+                                "visible":true,
+                                "width":0,
+                                "x":-2106,
+                                "y":14215
+                            },
+                            {
+                                "height":0,
+                                "id":992,
+                                "name":"",
+                                "point":true,
+                                "properties":[
+                                    {
+                                        "name":"delay",
+                                        "type":"int",
+                                        "value":0
+                                    },
+                                    {
+                                        "name":"room",
+                                        "type":"int",
+                                        "value":3
+                                    }],
+                                "rotation":0,
+                                "type":"statue-spawn",
+                                "visible":true,
+                                "width":0,
+                                "x":-1621,
+                                "y":14212
                             }],
                         "opacity":1,
                         "type":"objectgroup",
@@ -31797,12 +32268,12 @@ class LevelConstants {
                                         "y":0
                                     },
                                     {
-                                        "x":-152,
-                                        "y":908
+                                        "x":-184,
+                                        "y":1112
                                     },
                                     {
-                                        "x":6,
-                                        "y":908
+                                        "x":2,
+                                        "y":1092
                                     }],
                                 "properties":[
                                     {
@@ -31816,6 +32287,40 @@ class LevelConstants {
                                 "width":0,
                                 "x":6682,
                                 "y":8070
+                            },
+                            {
+                                "height":0,
+                                "id":976,
+                                "name":"",
+                                "polygon":[
+                                    {
+                                        "x":0,
+                                        "y":0
+                                    },
+                                    {
+                                        "x":-154,
+                                        "y":0
+                                    },
+                                    {
+                                        "x":-152,
+                                        "y":908
+                                    },
+                                    {
+                                        "x":6,
+                                        "y":908
+                                    }],
+                                "properties":[
+                                    {
+                                        "name":"room",
+                                        "type":"int",
+                                        "value":2
+                                    }],
+                                "rotation":0,
+                                "type":"door",
+                                "visible":true,
+                                "width":0,
+                                "x":5996,
+                                "y":14430
                             }],
                         "opacity":1,
                         "type":"objectgroup",
@@ -32035,16 +32540,12 @@ class LevelConstants {
                                         "y":10468
                                     },
                                     {
-                                        "x":208,
-                                        "y":9756
+                                        "x":-543,
+                                        "y":9058
                                     },
                                     {
-                                        "x":-688,
-                                        "y":8904
-                                    },
-                                    {
-                                        "x":-910,
-                                        "y":8118
+                                        "x":-648,
+                                        "y":8620
                                     }],
                                 "rotation":0,
                                 "type":"",
@@ -32195,16 +32696,16 @@ class LevelConstants {
                                         "y":3328
                                     },
                                     {
-                                        "x":-40,
-                                        "y":4220
+                                        "x":354,
+                                        "y":3912
                                     },
                                     {
-                                        "x":-242,
-                                        "y":4636
+                                        "x":38,
+                                        "y":4396
                                     },
                                     {
-                                        "x":-264,
-                                        "y":5036
+                                        "x":34,
+                                        "y":4894
                                     }],
                                 "rotation":0,
                                 "type":"",
@@ -32219,12 +32720,12 @@ class LevelConstants {
                                 "name":"",
                                 "polyline":[
                                     {
-                                        "x":0,
-                                        "y":0
+                                        "x":-1204,
+                                        "y":4
                                     },
                                     {
-                                        "x":0,
-                                        "y":404
+                                        "x":-1204,
+                                        "y":408
                                     }],
                                 "rotation":0,
                                 "type":"",
@@ -32312,6 +32813,74 @@ class LevelConstants {
                                 "width":0,
                                 "x":7996,
                                 "y":6728
+                            },
+                            {
+                                "height":0,
+                                "id":979,
+                                "name":"",
+                                "polygon":[
+                                    {
+                                        "x":-232,
+                                        "y":0
+                                    },
+                                    {
+                                        "x":-737,
+                                        "y":-15
+                                    },
+                                    {
+                                        "x":-701,
+                                        "y":840
+                                    },
+                                    {
+                                        "x":-235,
+                                        "y":828
+                                    }],
+                                "properties":[
+                                    {
+                                        "name":"room",
+                                        "type":"int",
+                                        "value":3
+                                    }],
+                                "rotation":0,
+                                "type":"nextarea",
+                                "visible":true,
+                                "width":0,
+                                "x":5778,
+                                "y":14334
+                            },
+                            {
+                                "height":0,
+                                "id":981,
+                                "name":"",
+                                "polygon":[
+                                    {
+                                        "x":16,
+                                        "y":-372
+                                    },
+                                    {
+                                        "x":-429,
+                                        "y":-375
+                                    },
+                                    {
+                                        "x":-389,
+                                        "y":1576
+                                    },
+                                    {
+                                        "x":17,
+                                        "y":1552
+                                    }],
+                                "properties":[
+                                    {
+                                        "name":"room",
+                                        "type":"int",
+                                        "value":4
+                                    }],
+                                "rotation":0,
+                                "type":"nextarea",
+                                "visible":true,
+                                "width":0,
+                                "x":-944,
+                                "y":14448
                             }],
                         "opacity":1,
                         "type":"objectgroup",
@@ -32326,8 +32895,8 @@ class LevelConstants {
                 "x":0,
                 "y":0
             }],
-        "nextlayerid":1013,
-        "nextobjectid":973,
+        "nextlayerid":1027,
+        "nextobjectid":993,
         "orientation":"orthogonal",
         "renderorder":"right-down",
         "tiledversion":"1.3.1",

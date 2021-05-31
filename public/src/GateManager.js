@@ -18,6 +18,10 @@ class GateManager {
 
     static _gate1TopSprite;
     static _gate1BottomSprite;
+    static _gate2TopSprite;
+    static _gate2BottomSprite;
+    static _gate3TopSprite;
+    static _gate3BottomSprite;
     static _gateHasOpenedSprite;
 
     static _gateOpenedTextDeltaTime;
@@ -25,21 +29,57 @@ class GateManager {
     static initialize() {
         GateManager._gate1TopSprite = new PIXI.AnimatedSprite(GateManager.GATE_1_TOP_TEXTURES);
         GateManager._gate1TopSprite.autoUpdate = true;
-        GateManager._gate1TopSprite.position.x = 652;
-        GateManager._gate1TopSprite.position.y = 148;
-        GateManager._gate1TopSprite.zIndex = 148 + 575;
+        GateManager._gate1TopSprite.position.x = 520.00;
+        GateManager._gate1TopSprite.position.y = 324.00;
+        GateManager._gate1TopSprite.zIndex = 324 + 575;
         GateManager._gate1TopSprite.loop = false;
         GateManager._gate1TopSprite.animationSpeed = 0.05;
         Renderer.container.addChild(GateManager._gate1TopSprite);
 
         GateManager._gate1BottomSprite = new PIXI.AnimatedSprite(GateManager.GATE_1_BOTTOM_TEXTURES);
         GateManager._gate1BottomSprite.autoUpdate = true;
-        GateManager._gate1BottomSprite.position.x = 652;
-        GateManager._gate1BottomSprite.position.y = 148;
-        GateManager._gate1BottomSprite.zIndex = 148 + 1440;
+        GateManager._gate1BottomSprite.position.x = 520;
+        GateManager._gate1BottomSprite.position.y = 324.00;
+        GateManager._gate1BottomSprite.zIndex = 324 + 1440;
         GateManager._gate1BottomSprite.loop = false;
         GateManager._gate1BottomSprite.animationSpeed = 0.05;
         Renderer.container.addChild(GateManager._gate1BottomSprite);
+
+        GateManager._gate2TopSprite = new PIXI.AnimatedSprite(GateManager.GATE_1_TOP_TEXTURES);
+        GateManager._gate2TopSprite.autoUpdate = true;
+        GateManager._gate2TopSprite.position.x = 6489.00;
+        GateManager._gate2TopSprite.position.y = 7694.00;
+        GateManager._gate2TopSprite.zIndex = 7694.00 + 575;
+        GateManager._gate2TopSprite.loop = false;
+        GateManager._gate2TopSprite.animationSpeed = 0.05;
+        Renderer.container.addChild(GateManager._gate2TopSprite);
+
+        GateManager._gate2BottomSprite = new PIXI.AnimatedSprite(GateManager.GATE_1_BOTTOM_TEXTURES);
+        GateManager._gate2BottomSprite.autoUpdate = true;
+        GateManager._gate2BottomSprite.position.x = 6489.00;
+        GateManager._gate2BottomSprite.position.y = 7694.00;
+        GateManager._gate2BottomSprite.zIndex = 7694.00 + 1440;
+        GateManager._gate2BottomSprite.loop = false;
+        GateManager._gate2BottomSprite.animationSpeed = 0.05;
+        Renderer.container.addChild(GateManager._gate2BottomSprite);
+
+        GateManager._gate3TopSprite = new PIXI.AnimatedSprite(GateManager.GATE_1_TOP_TEXTURES);
+        GateManager._gate3TopSprite.autoUpdate = true;
+        GateManager._gate3TopSprite.position.x = 5850.00;
+        GateManager._gate3TopSprite.position.y = 13861.00;
+        GateManager._gate3TopSprite.zIndex = 13861.00 + 575;
+        GateManager._gate3TopSprite.loop = false;
+        GateManager._gate3TopSprite.animationSpeed = 0.05;
+        Renderer.container.addChild(GateManager._gate3TopSprite);
+
+        GateManager._gate3BottomSprite = new PIXI.AnimatedSprite(GateManager.GATE_1_BOTTOM_TEXTURES);
+        GateManager._gate3BottomSprite.autoUpdate = true;
+        GateManager._gate3BottomSprite.position.x = 5850.00;
+        GateManager._gate3BottomSprite.position.y = 13861.00;
+        GateManager._gate3BottomSprite.zIndex = 13861.00 + 1440;
+        GateManager._gate3BottomSprite.loop = false;
+        GateManager._gate3BottomSprite.animationSpeed = 0.05;
+        Renderer.container.addChild(GateManager._gate3BottomSprite);
 
         GateManager._gateHasOpenedSprite = new PIXI.Sprite(GateManager.GATE_HAS_OPENED_TEXTURE);
         GateManager._gateHasOpenedSprite.position.x = window.innerWidth / 2;
@@ -76,6 +116,20 @@ class GateManager {
     static openGate1() {
         GateManager._gate1TopSprite.gotoAndPlay(0);
         GateManager._gate1BottomSprite.gotoAndPlay(0);
+
+        GateManager._gateOpenedTextDeltaTime = 1;
+    }
+
+    static openGate2() {
+        GateManager._gate2TopSprite.gotoAndPlay(0);
+        GateManager._gate2BottomSprite.gotoAndPlay(0);
+
+        GateManager._gateOpenedTextDeltaTime = 1;
+    }
+
+    static openGate3() {
+        GateManager._gate3TopSprite.gotoAndPlay(0);
+        GateManager._gate3BottomSprite.gotoAndPlay(0);
 
         GateManager._gateOpenedTextDeltaTime = 1;
     }
