@@ -6,7 +6,7 @@ const {app, BrowserWindow} = require('electron');
 const path = require('path');
 const url = require('url');
 
-const isDevelopment = true; // (process.env.NODE_ENV || '').trim() === 'dev';
+const isDevelopment = (process.env.NODE_ENV || '').trim() === 'dev';
 
 // global reference to mainWindow (necessary to prevent window from being garbage collected)
 let mainWindow;
