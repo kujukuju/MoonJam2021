@@ -137,7 +137,6 @@ class Level {
             let index = -1;
             for (let a = 0; a < this._wallProxies.length; a++) {
                 const proxy = this._wallProxies[a];
-                console.log(room, proxy);
                 if (proxy.userData === doors[i].polygon) {
                     index = a;
                     break;
@@ -214,13 +213,60 @@ class Level {
         };
     }
 
+    _requested;
+    _imageLayers;
     _loadLevel(json) {
+        // [{src: 'src', x: 0, y: 0, shadow: false}]
+        this._requested = {};
+        this._imageLayers = [];
+
         const layers = json.layers;
         for (let i = 0; i < layers.length; i++) {
             const layer = layers[i];
 
             this._readLayer(layer, 0, 0);
         }
+
+        // load textures here now
+        Renderer._application.loader.load((loaderInstance, resources) => {
+            for (let i = 0; i < this._imageLayers.length; i++) {
+                const layer = this._imageLayers[i];
+                const src = layer.src;
+                const x = layer.x;
+                const y = layer.y;
+                const shadow = layer.shadow;
+
+                const texture = resources[src].texture;
+                if (texture.width > 4096 || texture.height > 4096) {
+                    console.error('Texture is massive. Skipping. ', texture.width, texture.height, layer.name, layer.id, layer);
+                }
+
+                const sprite = new PIXI.Sprite(texture);
+                sprite.position.x = x;
+                sprite.position.y = y;
+                sprite.visible = false;
+                Renderer._application.renderer.plugins.prepare.upload(sprite, () => {});
+
+                const aabb = new box2d.b2AABB();
+                aabb.lowerBound.x = x;
+                aabb.lowerBound.y = y;
+                aabb.upperBound.x = x + texture.width;
+                aabb.upperBound.y = y + texture.height;
+                if (Level.IMAGE_NAME_TO_ANCHOR_MAP[src]) {
+                    sprite.zIndex = sprite.position.y + texture.height * Level.IMAGE_NAME_TO_ANCHOR_MAP[src];
+                } else {
+                    sprite.zIndex = sprite.position.y + texture.height - 120;
+                }
+
+                if (shadow) {
+                    this._shadowSpriteTree.CreateProxy(aabb, sprite);
+                    Renderer.levelShadowContainer.addChild(sprite);
+                } else {
+                    this._spriteTree.CreateProxy(aabb, sprite);
+                    Renderer.container.addChild(sprite);
+                }
+            }
+        });
     }
 
     _readLayer(layer, offsetX, offsetY) {
@@ -394,56 +440,70 @@ class Level {
                 const positionX = layer.offsetx + offsetX;
                 const positionY = layer.offsety + offsetY;
 
-                const texture = PIXI.Texture.from('assets/' + src);
-                const sprite = new PIXI.Sprite(texture);
-                sprite.position.x = positionX;
-                sprite.position.y = positionY;
-                sprite.visible = false;
+                this._imageLayers.push({
+                    src: src,
+                    x: positionX,
+                    y: positionY,
+                    shadow: layer.name.toLowerCase().includes('shadow'),
+                });
 
-                if (layer.name.toLowerCase().includes('shadow')) {
-                    texture.baseTexture.once('loaded', () => {
-                        if (texture.width > 4096 || texture.height > 4096) {
-                            console.error('Texture is massive. Skipping. ', texture.width, texture.height, layer.name, layer.id, layer);
-                            return;
-                        }
-
-                        const aabb = new box2d.b2AABB();
-                        aabb.lowerBound.x = positionX;
-                        aabb.lowerBound.y = positionY;
-                        aabb.upperBound.x = positionX + texture.width;
-                        aabb.upperBound.y = positionY + texture.height;
-                        if (Level.IMAGE_NAME_TO_ANCHOR_MAP[src]) {
-                            sprite.zIndex = sprite.position.y + texture.height * Level.IMAGE_NAME_TO_ANCHOR_MAP[src];
-                        } else {
-                            sprite.zIndex = sprite.position.y + texture.height - 120;
-                        }
-
-                        this._shadowSpriteTree.CreateProxy(aabb, sprite);
-                        Renderer.levelShadowContainer.addChild(sprite);
-                    });
-
-                } else {
-                    texture.baseTexture.once('loaded', () => {
-                        if (texture.width > 4096 || texture.height > 4096) {
-                            console.error('Texture is massive. Skipping. ', texture.width, texture.height, layer.name, layer.id, layer);
-                            return;
-                        }
-
-                        const aabb = new box2d.b2AABB();
-                        aabb.lowerBound.x = positionX;
-                        aabb.lowerBound.y = positionY;
-                        aabb.upperBound.x = positionX + texture.width;
-                        aabb.upperBound.y = positionY + texture.height;
-                        if (Level.IMAGE_NAME_TO_ANCHOR_MAP[src]) {
-                            sprite.zIndex = sprite.position.y + texture.height * Level.IMAGE_NAME_TO_ANCHOR_MAP[src];
-                        } else {
-                            sprite.zIndex = sprite.position.y + texture.height - 120;
-                        }
-
-                        this._spriteTree.CreateProxy(aabb, sprite);
-                        Renderer.container.addChild(sprite);
-                    });
+                if (this._requested[src]) {
+                    return;
                 }
+                this._requested[src] = true;
+
+                Renderer._application.loader.add(src, 'assets/' + src, {metadata: {choice: ['.dds', '.png']}});
+
+                // const texture = PIXI.Texture.from('assets/' + src);
+                // const sprite = new PIXI.Sprite(texture);
+                // sprite.position.x = positionX;
+                // sprite.position.y = positionY;
+                // sprite.visible = false;
+                //
+                // if (layer.name.toLowerCase().includes('shadow')) {
+                //     texture.baseTexture.once('loaded', () => {
+                //         if (texture.width > 4096 || texture.height > 4096) {
+                //             console.error('Texture is massive. Skipping. ', texture.width, texture.height, layer.name, layer.id, layer);
+                //             return;
+                //         }
+                //
+                //         const aabb = new box2d.b2AABB();
+                //         aabb.lowerBound.x = positionX;
+                //         aabb.lowerBound.y = positionY;
+                //         aabb.upperBound.x = positionX + texture.width;
+                //         aabb.upperBound.y = positionY + texture.height;
+                //         if (Level.IMAGE_NAME_TO_ANCHOR_MAP[src]) {
+                //             sprite.zIndex = sprite.position.y + texture.height * Level.IMAGE_NAME_TO_ANCHOR_MAP[src];
+                //         } else {
+                //             sprite.zIndex = sprite.position.y + texture.height - 120;
+                //         }
+                //
+                //         this._shadowSpriteTree.CreateProxy(aabb, sprite);
+                //         Renderer.levelShadowContainer.addChild(sprite);
+                //     });
+                //
+                // } else {
+                //     texture.baseTexture.once('loaded', () => {
+                //         if (texture.width > 4096 || texture.height > 4096) {
+                //             console.error('Texture is massive. Skipping. ', texture.width, texture.height, layer.name, layer.id, layer);
+                //             return;
+                //         }
+                //
+                //         const aabb = new box2d.b2AABB();
+                //         aabb.lowerBound.x = positionX;
+                //         aabb.lowerBound.y = positionY;
+                //         aabb.upperBound.x = positionX + texture.width;
+                //         aabb.upperBound.y = positionY + texture.height;
+                //         if (Level.IMAGE_NAME_TO_ANCHOR_MAP[src]) {
+                //             sprite.zIndex = sprite.position.y + texture.height * Level.IMAGE_NAME_TO_ANCHOR_MAP[src];
+                //         } else {
+                //             sprite.zIndex = sprite.position.y + texture.height - 120;
+                //         }
+                //
+                //         this._spriteTree.CreateProxy(aabb, sprite);
+                //         Renderer.container.addChild(sprite);
+                //     });
+                // }
             } break;
 
             case 'group': {

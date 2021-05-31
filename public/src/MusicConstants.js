@@ -1,6 +1,6 @@
 class MusicConstants {
     static BASE = 1;
-    static VOLUME = 0.3;
+    static VOLUME = 0;
     static CALIBRATION_OFFSET = (window.localStorage.getItem('calibration') ? Number.parseFloat(window.localStorage.getItem('calibration')) : -20) ?? -20;
 
     static MAIN_SONG_2_LABELS = `0.06\t0.06\tbpm135

@@ -15,7 +15,7 @@ class Renderer {
     static initialize() {
         // lol
         // PIXI.settings.GC_MAX_IDLE *= 8;
-        PIXI.settings.MIPMAP_TEXTURES = PIXI.MIPMAP_MODES.OFF;
+        // PIXI.settings.MIPMAP_TEXTURES = PIXI.MIPMAP_MODES.OFF;
 
         Renderer._application = new PIXI.Application({
             antialias: true,
@@ -23,6 +23,11 @@ class Renderer {
             height: window.innerHeight,
             backgroundColor: 0x444444,
         });
+        Renderer._application.loader.reset();
+        // const extensions = PIXI.compressedTextures.detectExtensions(Renderer._application.renderer);
+        // Renderer._application.loader.pre(PIXI.compressedTextures.extensionChooser(extensions));
+        // Renderer._application.loader.use(PIXI.compressedTextures.ImageParser.use);
+        // Renderer._application.loader.use(PIXI.compressedTextures.ExtensionFixer.use);
 
         const container = document.getElementById('canvas-container');
         container.appendChild(Renderer._application.view);
