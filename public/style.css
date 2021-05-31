@@ -53,14 +53,10 @@ html, body {
 
 .mainMenu .title {
     position: absolute;
-    top: 15vh;
+    top: 5vh;
     left: 50%;
 
     transform: translateX(-50%);
-
-    font-size: 50px;
-
-    font-weight: bolder;
 }
 
 .mainMenu .left {
