@@ -68,8 +68,6 @@ html, body {
 }
 
 .mainMenu .left .button {
-    display: inline-block;
-
     font-size: 72px;
 
     font-weight: bolder;
