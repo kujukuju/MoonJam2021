@@ -46,10 +46,9 @@ class MusicManager {
         // but I dont think that's possible in this simple game
 
         if (MusicManager.music) {
+            MusicManager.music.setBassPercentage(MusicManager._bassShift);
             MusicManager.music.update(time, dt);
         }
-
-        MusicManager.music.setBassPercentage(MusicManager._bassShift);
 
         MusicManager._lastBeat = MusicManager.getCurrentBeat(time);
 

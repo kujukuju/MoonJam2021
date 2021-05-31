@@ -315,6 +315,24 @@ class Level {
                                     this._enemySpawns[room].push(this._createSpawn(point, delay, GhoulEntity));
                                 } break;
 
+                                case 'zombie-spawn': {
+                                    const delayProperty = object.properties ? object.properties.find(entry => entry.name === 'delay') : null;
+                                    const delay = delayProperty ? delayProperty.value : 0;
+
+                                    const roomProperty = object.properties ? object.properties.find(entry => entry.name === 'room') : null;
+                                    const room = roomProperty ? roomProperty.value : -1;
+
+                                    if (room === -1) {
+                                        console.error('Found a spawn without a room property.', object.id);
+                                    }
+
+                                    if (!this._enemySpawns[room]) {
+                                        this._enemySpawns[room] = [];
+                                    }
+
+                                    this._enemySpawns[room].push(this._createSpawn(point, delay, ZombieEntity));
+                                } break;
+
                                 default:
                                     console.error('Unknown point type.', object.type, object.id);
                             }

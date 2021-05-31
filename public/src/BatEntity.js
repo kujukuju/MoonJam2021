@@ -69,6 +69,10 @@ class BatEntity extends EnemyEntity {
     kill() {
         super.kill();
 
+        const id = Entity.BAT_HIT.play();
+        AudioStuff.initialize3D(Entity.BAT_HIT, id, this._position);
+        // TODO position this sound
+
         AbilityInformation.addAbility(new DeadBatAbility(this));
     }
 

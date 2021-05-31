@@ -12,6 +12,8 @@ class Camera {
 
         Camera._position[0] = spawn[0];
         Camera._position[1] = spawn[1];
+
+        Howler.pos(Camera._position[0] / 500, Camera._position[1] / 500, 1);
     }
 
     static update(time, dt) {
@@ -28,6 +30,8 @@ class Camera {
                 Camera._position[1] = clientEntity.getPosition()[1];
             }
         }
+
+        Howler.pos(Camera._position[0] / 500, Camera._position[1] / 500, 1);
 
         Camera._updateContainers();
 

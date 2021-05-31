@@ -2,6 +2,9 @@ class Entity {
     static SHADOW_TEXTURE = PIXI.Texture.from('assets/shadow.png');
     static VERTICAL_OFFSET = 140;
 
+    static HUMANOID_HIT = new Howl({src: 'assets/humanoid-hit.mp3', volume: 0.5 * MusicConstants.BASE});
+    static BAT_HIT = new Howl({src: 'assets/bat-hit.mp3', volume: 0.7 * MusicConstants.BASE});
+
     // these values are now percentages of max speed, I think
     static ACCEL = 0.05;
     static FRICTION = 0.05;

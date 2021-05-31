@@ -251,6 +251,7 @@ class Osu extends Ability {
             Camera.forcePosition(this._position);
 
             const fadeInProgress = Math.min(this._deltaTime / this._beatDuration * 2, 1);
+            MusicManager.forceSetBassPercentage(fadeInProgress);
             this._blackOverlaySprite.alpha = fadeInProgress * 0.5;
             Camera.forceDensity(1 - fadeInProgress * 0.5);
 
@@ -362,7 +363,7 @@ class Osu extends Ability {
                     if (progress > mostValidValue) {
                         mostValidValue = progress;
                         mostValidIndex = index;
-                        actuallyValid = progress > 0.8;
+                        actuallyValid = progress > 0.9;
                     }
                 }
 
@@ -387,6 +388,7 @@ class Osu extends Ability {
         } else {
             // fade out black overlay very fast, half duration?
             const fadeOutProgress = Math.min(this._fadeOutDeltaTime / this._beatDuration * 2, 1);
+            MusicManager.forceSetBassPercentage(1 - fadeOutProgress);
             this._blackOverlaySprite.alpha = 0.5 - fadeOutProgress * 0.5;
             Camera.forceDensity(0.5 + fadeOutProgress * 0.5);
             // alpha is fade out blah blah

@@ -63,12 +63,17 @@ class EnemyEntity extends Entity {
         }
 
         this._informFriendsCountdown = Math.max(this._informFriendsCountdown - dt, 0);
-        if (this._informFriendsCountdown === 0 && this._informFriends.length > 0) {
-            for (let i = 0; i < this._informFriends.length; i++) {
-                this._informFriends[i].setFoundTarget();
-            }
+        if (this._informFriendsCountdown === 0) {
+            // this probably fixes the lag
+            this._informFriendsCountdown = 1000;
 
-            this._informFriends = [];
+            if (this._informFriends.length > 0) {
+                for (let i = 0; i < this._informFriends.length; i++) {
+                    this._informFriends[i].setFoundTarget();
+                }
+
+                this._informFriends.length = 0;
+            }
         }
 
         this._holdWanderCountdown = Math.max(this._holdWanderCountdown - dt, 0);

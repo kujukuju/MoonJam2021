@@ -10,6 +10,9 @@ class SwordSwing extends Ability {
         new PIXI.Texture(SwordSwing.TEXTURE, new PIXI.Rectangle(SwordSwing.WIDTH * 4, 0, SwordSwing.WIDTH, SwordSwing.HEIGHT)),
     ];
 
+    static SWING_NOISE = new Howl({src: 'assets/sword-swing.mp3', volume: 0.6 * MusicConstants.BASE});
+    static HIT_NOISE = new Howl({src: 'assets/maybe-hit.mp3', volume: 0.6 * MusicConstants.BASE});
+
     static DURATION = 400;
 
     static ANCHOR = [1 / SwordSwing.WIDTH, 125 / SwordSwing.HEIGHT];
@@ -38,6 +41,9 @@ class SwordSwing extends Ability {
         this._sprite.scale.y = 1;
         this._sprite.visible = false;
         Renderer.container.addChild(this._sprite);
+
+        const id = SwordSwing.SWING_NOISE.play();
+        AudioStuff.initialize3D(SwordSwing.HIT_NOISE, id, EntityInformation.getClientEntity().getPosition());
 
         this._deltaTime = 0;
     }
@@ -73,6 +79,7 @@ class SwordSwing extends Ability {
             return [ownerPosition[0] + rotated[0], ownerPosition[1] + rotated[1]];
         });
 
+        let hit = false;
         // handle polygon collisions, 1 sec coffee
         const potentialEntities = EntityInformation.getEntities(ownerPosition, 300);
         for (let i = 0; i < potentialEntities.length; i++) {
@@ -81,10 +88,21 @@ class SwordSwing extends Ability {
                 continue;
             }
 
+            // cant kill behind walls
+            if (!LevelManager.level.canTraceLine(ownerPosition, entity.getPosition())) {
+                continue;
+            }
+
             if (MathHelper.polygonEntityCollision(entity, polygon)) {
+                hit = true;
                 entity.kill();
             }
         }
+
+        // if (hit) {
+        //     const id = SwordSwing.HIT_NOISE.play();
+        //     AudioStuff.initialize3D(SwordSwing.HIT_NOISE, id, ownerPosition);
+        // }
 
         if (this._deltaTime > SwordSwing.DURATION) {
             this.destroy();

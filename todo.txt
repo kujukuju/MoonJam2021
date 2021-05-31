@@ -1,18 +1,17 @@
---- 1 hour
-
-ultimate ability
-moon2W
 
 
-THIS IS NEXT vvvvv BRB
 
-ultimate ability will shift the volume of songs between the two
 
---- 6 hours
+AFK FOR A FEW MINUTES WHILE I EAT
+THEN I ADD IN THE NEW MAP, PROBABLY?
 
-3d audio :|
+ty but also I hope you know this is not my stream
+im eating
 
----
+ah okay, well eating is finished now anyways
+
+
+
 
 add other other 2 gates
 
@@ -48,3 +47,7 @@ I did LoS instead. is that good enough?
 osu mode should use actually not stupid data from the music to get the next sound time for a specific sound
 then find the closest to next, but not <= time, and sample that, and continue
 also with this random 20% chance to go to beats
+
+ultimate ability dashes?
+
+hold escape to kill yourself?

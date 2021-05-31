@@ -144,7 +144,7 @@ class ChargeManager {
     static addPerfect() {
         ChargeManager._chargeGun = Math.min(ChargeManager._chargeGun + 1 / 4, 1);
         ChargeManager._chargeDash = Math.min(ChargeManager._chargeDash + 1 / 2, 1);
-        ChargeManager._chargeUlt = Math.min(ChargeManager._chargeUlt + 1 / 25, 1);
+        ChargeManager._chargeUlt = Math.min(ChargeManager._chargeUlt + 1 / 10, 1);
         // ChargeManager._chargeUlt = Math.min(ChargeManager._chargeUlt + 1 / 2, 1);
     }
 }

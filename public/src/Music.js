@@ -16,6 +16,7 @@ class Music {
 
     _bassPercentage;
     _volume;
+    _lastAppliedBassPercentage;
 
     constructor(howl, labels, bassHowl) {
         this._howl = howl;
@@ -25,12 +26,14 @@ class Music {
         if (bassHowl) {
             this._bassHowl = bassHowl;
             this._bassID = bassHowl.play();
+            this._bassHowl.volume(0, this._bassID);
         }
 
         this._startOffset = 0;
         this._bpm = 0;
         this._bassPercentage = 0;
-        this._volume = 0;
+        this._lastAppliedBassPercentage = 0;
+        this._volume = 1;
 
         this._events = {};
 
@@ -59,8 +62,13 @@ class Music {
             this._lastMouseDown = true;
         }
 
+        if (this._bassPercentage !== this._lastAppliedBassPercentage) {
+            this._lastAppliedBassPercentage = this._bassPercentage;
 
-
+            if (this._bassHowl) {
+                this._applyBassVolume();
+            }
+        }
     }
 
     getSound() {
@@ -151,12 +159,12 @@ class Music {
     }
 
     getVolume() {
-        return this._howl.volume(this._id) ?? 0;
+        return this._volume * this._howl.volume();
     }
 
     setVolume(volume) {
-        this._volume = volume;
-        this._howl.volume(volume, this._id);
+        this._volume = volume / this._howl.volume();
+        this._applyBassVolume();
     }
 
     getBeatTimeModifier(beat) {
@@ -198,6 +206,21 @@ class Music {
 
     destroy() {
         this._howl.stop(this._id);
+        if (this._bassHowl) {
+            this._bassHowl.stop(this._bassID);
+        }
+    }
+
+    _applyBassVolume() {
+        if (this._bassHowl) {
+            const normalVolume = this._volume * (1 - this._bassPercentage);
+            const bassVolume = this._volume * (this._bassPercentage);
+
+            this._howl.volume(normalVolume * this._howl.volume(), this._id);
+            this._bassHowl.volume(bassVolume * this._howl.volume(), this._bassID);
+        } else {
+            this._howl.volume(this._volume * this._howl.volume(), this._id);
+        }
     }
 
     _processLabels(labels) {

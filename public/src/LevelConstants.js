@@ -8916,7 +8916,7 @@ class LevelConstants {
                                     {
                                         "name":"delay",
                                         "type":"int",
-                                        "value":1
+                                        "value":3
                                     },
                                     {
                                         "name":"room",
@@ -13534,7 +13534,7 @@ class LevelConstants {
                                     {
                                         "name":"delay",
                                         "type":"int",
-                                        "value":6
+                                        "value":4
                                     },
                                     {
                                         "name":"room",
@@ -13557,7 +13557,7 @@ class LevelConstants {
                                     {
                                         "name":"delay",
                                         "type":"int",
-                                        "value":6
+                                        "value":5
                                     },
                                     {
                                         "name":"room",
@@ -13603,7 +13603,7 @@ class LevelConstants {
                                     {
                                         "name":"delay",
                                         "type":"int",
-                                        "value":6
+                                        "value":7
                                     },
                                     {
                                         "name":"room",
@@ -13626,7 +13626,7 @@ class LevelConstants {
                                     {
                                         "name":"delay",
                                         "type":"int",
-                                        "value":6
+                                        "value":4
                                     },
                                     {
                                         "name":"room",
@@ -13649,7 +13649,7 @@ class LevelConstants {
                                     {
                                         "name":"delay",
                                         "type":"int",
-                                        "value":6
+                                        "value":4
                                     },
                                     {
                                         "name":"room",
@@ -13672,7 +13672,7 @@ class LevelConstants {
                                     {
                                         "name":"delay",
                                         "type":"int",
-                                        "value":6
+                                        "value":7
                                     },
                                     {
                                         "name":"room",
@@ -13695,7 +13695,7 @@ class LevelConstants {
                                     {
                                         "name":"delay",
                                         "type":"int",
-                                        "value":6
+                                        "value":8
                                     },
                                     {
                                         "name":"room",
@@ -13741,7 +13741,7 @@ class LevelConstants {
                                     {
                                         "name":"delay",
                                         "type":"int",
-                                        "value":6
+                                        "value":5
                                     },
                                     {
                                         "name":"room",
@@ -13787,7 +13787,7 @@ class LevelConstants {
                                     {
                                         "name":"delay",
                                         "type":"int",
-                                        "value":6
+                                        "value":7
                                     },
                                     {
                                         "name":"room",
@@ -18948,6 +18948,52 @@ class LevelConstants {
                                 "width":0,
                                 "x":3724,
                                 "y":9996
+                            },
+                            {
+                                "height":0,
+                                "id":561,
+                                "name":"",
+                                "point":true,
+                                "properties":[
+                                    {
+                                        "name":"delay",
+                                        "type":"int",
+                                        "value":6
+                                    },
+                                    {
+                                        "name":"room",
+                                        "type":"int",
+                                        "value":1
+                                    }],
+                                "rotation":0,
+                                "type":"zombie-spawn",
+                                "visible":true,
+                                "width":0,
+                                "x":1092,
+                                "y":5304
+                            },
+                            {
+                                "height":0,
+                                "id":562,
+                                "name":"",
+                                "point":true,
+                                "properties":[
+                                    {
+                                        "name":"delay",
+                                        "type":"int",
+                                        "value":6
+                                    },
+                                    {
+                                        "name":"room",
+                                        "type":"int",
+                                        "value":1
+                                    }],
+                                "rotation":0,
+                                "type":"zombie-spawn",
+                                "visible":true,
+                                "width":0,
+                                "x":192,
+                                "y":5568
                             }],
                         "opacity":1,
                         "type":"objectgroup",
@@ -19643,7 +19689,7 @@ class LevelConstants {
                 "y":0
             }],
         "nextlayerid":851,
-        "nextobjectid":559,
+        "nextobjectid":563,
         "orientation":"orthogonal",
         "renderorder":"right-down",
         "tiledversion":"1.3.1",

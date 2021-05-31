@@ -23,6 +23,11 @@ class StateManager {
         });
 
         document.getElementById('embark').addEventListener('click', event => {
+            if (MusicConstants.ROOMS[0][0].state() !== 'loaded' || MusicConstants.ROOMS[0][2].state() !== 'loaded') {
+                // don't allow to start without music being loaded
+                return;
+            }
+
             MusicManager.embark();
             document.getElementById('main-menu').style.display = 'none';
         });
