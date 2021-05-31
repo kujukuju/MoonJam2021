@@ -385,7 +385,7 @@
                 {
                  "id":1023,
                  "image":"cathedral1.png",
-                 "name":"shadow",
+                 "name":"cathpart",
                  "offsetx":-3999,
                  "offsety":14136,
                  "opacity":1,
@@ -32031,7 +32031,7 @@
          "y":0
         }],
  "nextlayerid":1027,
- "nextobjectid":998,
+ "nextobjectid":1015,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.3.1",

@@ -1,15 +1,16 @@
 class BossEntity extends EnemyEntity {
-    static TEXTURE = PIXI.Texture.from('assets/ghoul-sheet.png');
+    static TEXTURE = PIXI.Texture.from('assets/vamp-sheet.png');
     static TEXTURES = [
-        new PIXI.Texture(BossEntity.TEXTURE, new PIXI.Rectangle(0, 0, 500, 445)),
-        new PIXI.Texture(BossEntity.TEXTURE, new PIXI.Rectangle(500, 0, 500, 445)),
-        new PIXI.Texture(BossEntity.TEXTURE, new PIXI.Rectangle(500 * 2, 0, 500, 445)),
-        new PIXI.Texture(BossEntity.TEXTURE, new PIXI.Rectangle(500 * 3, 0, 500, 445)),
+        new PIXI.Texture(BossEntity.TEXTURE, new PIXI.Rectangle(0, 0, 386, 499)),
+        new PIXI.Texture(BossEntity.TEXTURE, new PIXI.Rectangle(386, 0, 386, 499)),
+        new PIXI.Texture(BossEntity.TEXTURE, new PIXI.Rectangle(386 * 2, 0, 386, 499)),
+        new PIXI.Texture(BossEntity.TEXTURE, new PIXI.Rectangle(386 * 3, 0, 386, 499)),
+        new PIXI.Texture(BossEntity.TEXTURE, new PIXI.Rectangle(386 * 4, 0, 386, 499)),
     ];
 
     static ANCHOR = [
-        106 / 500,
-        408 / 445,
+        104 / 386,
+        460 / 499,
     ];
 
     _sprite;
@@ -22,9 +23,9 @@ class BossEntity extends EnemyEntity {
     constructor() {
         super();
 
-        this._sprite = new PIXI.AnimatedSprite(GhoulEntity.TEXTURES);
-        this._sprite.anchor.x = GhoulEntity.ANCHOR[0];
-        this._sprite.anchor.y = GhoulEntity.ANCHOR[1];
+        this._sprite = new PIXI.AnimatedSprite(BossEntity.TEXTURES);
+        this._sprite.anchor.x = BossEntity.ANCHOR[0];
+        this._sprite.anchor.y = BossEntity.ANCHOR[1];
         // this._sprite.scale.x = 0.8;
         // this._sprite.scale.y = 0.8;
         this._sprite.visible = false;
@@ -67,7 +68,7 @@ class BossEntity extends EnemyEntity {
 
             this._currentFrame++;
 
-            this._sprite.gotoAndStop(this._currentFrame % this._sprite.textures.length);
+            this._sprite.gotoAndStop(this._currentFrame % (this._sprite.textures.length - 2));
         }
 
         if (this._forcedFrame !== -1) {
@@ -100,7 +101,7 @@ class BossEntity extends EnemyEntity {
 
     attack() {
         // do damage, make noise
-        AbilityInformation.addAbility(new BatBite(this));
+        AbilityInformation.addAbility(new BossAttack(this));
     }
 
     kill(gun) {

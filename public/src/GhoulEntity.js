@@ -67,7 +67,7 @@ class GhoulEntity extends EnemyEntity {
 
             this._currentFrame++;
 
-            this._sprite.gotoAndStop(this._currentFrame % this._sprite.textures.length);
+            this._sprite.gotoAndStop(this._currentFrame % (this._sprite.textures.length - 2));
         }
 
         if (this._forcedFrame !== -1) {
