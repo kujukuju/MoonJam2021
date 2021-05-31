@@ -34,7 +34,7 @@ class ChargeManager {
         ChargeManager._dashFill.width = 399 * 0.4;
         ChargeManager._dashFill.height = 98 * 0.4;
         ChargeManager._dashFill.alpha = 0.5;
-        Renderer.staticContainer.addChild(ChargeManager._dashFill);
+        // Renderer.staticContainer.addChild(ChargeManager._dashFill);
         ChargeManager._ultFill = new PIXI.Sprite(PIXI.Texture.WHITE);
         ChargeManager._ultFill.position.x = 3 * 0.4 + (window.innerWidth - 605) - 2 - 399 * 0.4;
         ChargeManager._ultFill.position.y = 45 * 0.4 + 40;
@@ -58,7 +58,7 @@ class ChargeManager {
         ChargeManager._dashSprite.scale.y = 0.4;
         ChargeManager._dashSprite.anchor.x = 0.5;
         ChargeManager._dashSprite.alpha = 0;
-        Renderer.staticContainer.addChild(ChargeManager._dashSprite);
+        // Renderer.staticContainer.addChild(ChargeManager._dashSprite);
 
         ChargeManager._ultSprite = new PIXI.Sprite(ChargeManager.ULT_TEXT);
         ChargeManager._ultSprite.position.x = window.innerWidth - 605;
@@ -126,7 +126,7 @@ class ChargeManager {
     }
 
     static canDash() {
-        return ChargeManager._chargeDash === 1;
+        return true; ChargeManager._chargeDash === 1;
     }
 
     static consumeDashCharge() {

@@ -39,11 +39,17 @@ class GunPrep extends Ability {
 
             GunPrep.GUNSHOT.play();
 
-            const velocity = [
-                Math.cos(owner.getAngle()) * 4,
-                Math.sin(owner.getAngle()) * 4,
-            ];
-            AbilityInformation.addAbility(new Bullet(owner.getPosition(), velocity));
+            const ownerAngle = owner.getAngle();
+            for (let i = 0; i < 7; i++) {
+                const progress = i / 6;
+                const angleOffset = (progress * 2 - 1) * Math.PI / 8;
+
+                const velocity = [
+                    Math.cos(ownerAngle + angleOffset) * 4,
+                    Math.sin(ownerAngle + angleOffset) * 4,
+                ];
+                AbilityInformation.addAbility(new Bullet(owner.getPosition(), velocity));
+            }
         }
 
         if (this._deltaTime > this._duration) {

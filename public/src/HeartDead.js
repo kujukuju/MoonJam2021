@@ -47,6 +47,7 @@ class HeartDead extends Ability {
     setPosition(x, y) {
         this._sprite.position.x = x;
         this._sprite.position.y = y - 80;
+        this._sprite.zIndex = y;
     }
 
     destroy() {

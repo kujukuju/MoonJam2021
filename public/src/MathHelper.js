@@ -279,6 +279,10 @@ class MathHelper {
         return Math.sqrt(vec[0] * vec[0] + vec[1] * vec[1]);
     }
 
+    static isPointInAABB(point, aabb) {
+        return point[0] >= aabb[0][0] && point[0] < aabb[1][0] && point[1] >= aabb[0][1] && point[1] < aabb[1][1];
+    }
+
     static bounceOut(t) {
         const a = 4.0 / 11.0;
         const b = 8.0 / 11.0;

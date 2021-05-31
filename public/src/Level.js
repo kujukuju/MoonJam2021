@@ -1,4 +1,19 @@
 class Level {
+    static IMAGE_NAME_TO_ANCHOR_MAP = {
+        'House 1 flipped1.png': 700 / 920,
+        'House 1 flipped2.png': 495 / 967,
+        'HOUSE 2 flipped1.png': 691 / 963,
+        'HOUSE 2 flipped2.png': 417 / 867,
+        'house 3 flipped1.png': 700 / 899,
+        'house 3 flipped2.png': 559 / 1016,
+        'HOUSE NEW 11.png': 723 / 912,
+        'HOUSE NEW 12.png': 500 / 973,
+        'HOUSE NEW 21.png': 700 / 960,
+        'HOUSE NEW 22.png': 422 / 870,
+        'HOUSE NEW 31.png': 712 / 905,
+        'HOUSE NEW 32.png': 564 / 1010,
+    };
+
     _sprite;
 
     _wallProxies;
@@ -17,6 +32,9 @@ class Level {
     _spriteTree;
     _visibleSprites;
 
+    _shadowSpriteTree;
+    _visibleShadowSprites;
+
     constructor() {
         this._wallProxies = [];
         this._wallTree = new box2d.b2DynamicTree();
@@ -31,6 +49,9 @@ class Level {
 
         this._spriteTree = new box2d.b2DynamicTree();
         this._visibleSprites = [];
+
+        this._shadowSpriteTree = new box2d.b2DynamicTree();
+        this._visibleShadowSprites = [];
 
         this._loadLevel(LevelConstants.LEVEL);
     }
@@ -67,9 +88,21 @@ class Level {
         }
         this._visibleSprites.length = 0;
 
+        for (let i = 0; i < this._visibleShadowSprites.length; i++) {
+            this._visibleShadowSprites[i].visible = false;
+        }
+        this._visibleShadowSprites.length = 0;
+
         this._spriteTree.Query(node => {
             node.userData.visible = true;
             this._visibleSprites.push(node.userData);
+
+            return true;
+        }, aabb);
+
+        this._shadowSpriteTree.Query(node => {
+            node.userData.visible = true;
+            this._visibleShadowSprites.push(node.userData);
 
             return true;
         }, aabb);
@@ -352,19 +385,50 @@ class Level {
                 sprite.position.y = positionY;
                 sprite.visible = false;
 
-                texture.baseTexture.once('loaded', () => {
-                    const aabb = new box2d.b2AABB();
-                    aabb.lowerBound.x = positionX;
-                    aabb.lowerBound.y = positionY;
-                    aabb.upperBound.x = positionX + texture.width;
-                    aabb.upperBound.y = positionY + texture.height;
-                    sprite.zIndex = sprite.position.y + texture.height - 120;
+                if (layer.name.toLowerCase().includes('shadow')) {
+                    texture.baseTexture.once('loaded', () => {
+                        if (texture.width > 4096 || texture.height > 4096) {
+                            console.error('Texture is massive. Skipping. ', texture.width, texture.height, layer.name, layer.id, layer);
+                            return;
+                        }
 
-                    this._spriteTree.CreateProxy(aabb, sprite);
-                });
+                        const aabb = new box2d.b2AABB();
+                        aabb.lowerBound.x = positionX;
+                        aabb.lowerBound.y = positionY;
+                        aabb.upperBound.x = positionX + texture.width;
+                        aabb.upperBound.y = positionY + texture.height;
+                        if (Level.IMAGE_NAME_TO_ANCHOR_MAP[src]) {
+                            sprite.zIndex = sprite.position.y + texture.height * Level.IMAGE_NAME_TO_ANCHOR_MAP[src];
+                        } else {
+                            sprite.zIndex = sprite.position.y + texture.height - 120;
+                        }
 
+                        this._shadowSpriteTree.CreateProxy(aabb, sprite);
+                        Renderer.levelShadowContainer.addChild(sprite);
+                    });
 
-                Renderer.container.addChild(sprite);
+                } else {
+                    texture.baseTexture.once('loaded', () => {
+                        if (texture.width > 4096 || texture.height > 4096) {
+                            console.error('Texture is massive. Skipping. ', texture.width, texture.height, layer.name, layer.id, layer);
+                            return;
+                        }
+
+                        const aabb = new box2d.b2AABB();
+                        aabb.lowerBound.x = positionX;
+                        aabb.lowerBound.y = positionY;
+                        aabb.upperBound.x = positionX + texture.width;
+                        aabb.upperBound.y = positionY + texture.height;
+                        if (Level.IMAGE_NAME_TO_ANCHOR_MAP[src]) {
+                            sprite.zIndex = sprite.position.y + texture.height * Level.IMAGE_NAME_TO_ANCHOR_MAP[src];
+                        } else {
+                            sprite.zIndex = sprite.position.y + texture.height - 120;
+                        }
+
+                        this._spriteTree.CreateProxy(aabb, sprite);
+                        Renderer.container.addChild(sprite);
+                    });
+                }
             } break;
 
             case 'group': {

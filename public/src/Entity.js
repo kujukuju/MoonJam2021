@@ -199,6 +199,14 @@ class Entity {
         this._forcedMaxSpeedMul = 1;
     }
 
+    setHidden() {
+        throw 'You must override the setHidden method.';
+    }
+
+    setVisible() {
+        throw 'You must override the setVisible method.';
+    }
+
     getEntityID() {
         return this._entityID;
     }

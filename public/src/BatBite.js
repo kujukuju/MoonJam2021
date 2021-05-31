@@ -57,6 +57,7 @@ class BatBite extends Ability {
         this._sprite.visible = true;
         this._sprite.position.x = ownerPosition[0] + Math.cos(this._owner.getAngle()) * this._owner.getRadius();
         this._sprite.position.y = ownerPosition[1] - Entity.VERTICAL_OFFSET + Math.sin(this._owner.getAngle()) * this._owner.getRadius();
+        this._sprite.zIndex = ownerPosition[1] + Math.sin(this._owner.getAngle()) * this._owner.getRadius();
         this._sprite.rotation = this._owner.getAngle();
 
         const polygon = BatBite.POLYGON.map(point => {
@@ -70,8 +71,6 @@ class BatBite extends Ability {
             if (entity === this._owner) {
                 continue;
             }
-
-            console.log(entity);
 
             if (MathHelper.polygonEntityCollision(entity, polygon)) {
                 entity.kill();

@@ -79,6 +79,16 @@ class ZombieEntity extends EnemyEntity {
         }
     }
 
+    setHidden() {
+        this._sprite.visible = false;
+        this._shadowSprite.visible = false;
+    }
+
+    setVisible() {
+        this._sprite.visible = true;
+        this._shadowSprite.visible = true;
+    }
+
     forceFrame(frame) {
         this._forcedFrame = frame;
     }
@@ -100,9 +110,9 @@ class ZombieEntity extends EnemyEntity {
         super.kill();
 
         const id = Entity.HUMANOID_HIT.play();
-        // TODO position this sound
+        AudioStuff.initialize3D(Entity.HUMANOID_HIT, id, this._position);
 
-        AbilityInformation.addAbility(new DeadBatAbility(this));
+        AbilityInformation.addAbility(new DeadAbility(this, DeadAbility.ZOMBIE_TEXTURE));
     }
 
     getAttackChance() {
@@ -117,6 +127,10 @@ class ZombieEntity extends EnemyEntity {
         super.destroy();
 
         this._sprite.destroy();
+    }
+
+    _getMaxSpeed() {
+        return Entity.MAX_SPEED * this._forcedMaxSpeedMul * 0.75;
     }
 
     _getRelativeBeat(time) {

@@ -107,6 +107,8 @@ class Camera {
 
         Renderer.backgroundContainer.position.x = x;
         Renderer.backgroundContainer.position.y = y;
+        Renderer.levelShadowContainer.position.x = x;
+        Renderer.levelShadowContainer.position.y = y;
         Renderer.boundaryContainer.position.x = x;
         Renderer.boundaryContainer.position.y = y;
         Renderer.shadowContainer.position.x = x;
@@ -120,6 +122,8 @@ class Camera {
 
         Renderer.backgroundContainer.scale.x = density;
         Renderer.backgroundContainer.scale.y = density;
+        Renderer.levelShadowContainer.scale.x = density;
+        Renderer.levelShadowContainer.scale.y = density;
         Renderer.boundaryContainer.scale.x = density;
         Renderer.boundaryContainer.scale.y = density;
         Renderer.shadowContainer.scale.x = density;

@@ -23,9 +23,24 @@ class EntityInformation {
             return;
         }
 
+        const cameraAABB = Camera.getAABB();
+        cameraAABB[0][0] -= 500;
+        cameraAABB[0][1] -= 500;
+        cameraAABB[1][0] += 500;
+        cameraAABB[1][1] += 1000;
+
+        const hasOsuAbility = AbilityInformation.hasOsuAbility();
         for (const entityID in EntityInformation._entitiesByID) {
             const entity = EntityInformation._entitiesByID[entityID];
-            entity.update(time, dt);
+            const position = entity.getPosition();
+            if (MathHelper.isPointInAABB(position, cameraAABB)) {
+                entity.update(time, dt);
+            } else {
+                // screen enlarges so we need to keep them visible
+                if (!hasOsuAbility) {
+                    entity.setHidden();
+                }
+            }
         }
 
         for (const entityID in EntityInformation._entitiesByID) {

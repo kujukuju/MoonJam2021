@@ -57,6 +57,16 @@ class BatEntity extends EnemyEntity {
         }
     }
 
+    setHidden() {
+        this._sprite.visible = false;
+        this._shadowSprite.visible = false;
+    }
+
+    setVisible() {
+        this._sprite.visible = true;
+        this._shadowSprite.visible = true;
+    }
+
     getRadius() {
         return 40;
     }
@@ -71,9 +81,8 @@ class BatEntity extends EnemyEntity {
 
         const id = Entity.BAT_HIT.play();
         AudioStuff.initialize3D(Entity.BAT_HIT, id, this._position);
-        // TODO position this sound
 
-        AbilityInformation.addAbility(new DeadBatAbility(this));
+        AbilityInformation.addAbility(new DeadAbility(this, DeadAbility.BAT_TEXTURE));
     }
 
     destroy() {

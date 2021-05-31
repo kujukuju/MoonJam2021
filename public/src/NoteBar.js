@@ -13,12 +13,20 @@ class NoteBar {
         NoteBar._sprite.anchor.y = 0.5;
         NoteBar._sprite.position.x = window.innerWidth / 2;
         NoteBar._sprite.position.y = window.innerHeight - 48 - 30;
+        NoteBar._sprite.alpha = 0;
         Renderer.staticContainer.addChild(NoteBar._sprite);
     }
 
     static update(time, dt) {
         const currentBeat = MusicManager.getCurrentBeat(time);
         const currentBeatFloor = Math.floor(currentBeat);
+
+        const clientEntity = EntityInformation.getClientEntity();
+        if (clientEntity) {
+            NoteBar._sprite.alpha = Math.min(NoteBar._sprite.alpha + 0.001 * dt, 1);
+        } else {
+            NoteBar._sprite.alpha = Math.max(NoteBar._sprite.alpha - 0.001 * dt, 0);
+        }
 
         const keys = Object.keys(NoteBar._noteSprites);
         for (let i = 0; i < keys.length; i++) {
@@ -50,18 +58,20 @@ class NoteBar {
             NoteBar._noteSprites[beat] = [leftSprite, rightSprite];
         }
 
-        for (const beatKey in NoteBar._noteSprites) {
-            // maybe?
-            const remainingBeatsUntilBeat = beatKey - currentBeat;
-            const [leftSprite, rightSprite] = NoteBar._noteSprites[beatKey];
+        if (clientEntity) {
+            for (const beatKey in NoteBar._noteSprites) {
+                // maybe?
+                const remainingBeatsUntilBeat = beatKey - currentBeat;
+                const [leftSprite, rightSprite] = NoteBar._noteSprites[beatKey];
 
-            leftSprite.position.x = window.innerWidth / 2 - remainingBeatsUntilBeat * 200;
-            leftSprite.position.y = window.innerHeight - 48 - 30;
-            leftSprite.alpha = Math.min(leftSprite.alpha + 0.001 * dt, 1);
+                leftSprite.position.x = window.innerWidth / 2 - remainingBeatsUntilBeat * 200;
+                leftSprite.position.y = window.innerHeight - 48 - 30;
+                leftSprite.alpha = Math.min(leftSprite.alpha + 0.001 * dt, 1);
 
-            rightSprite.position.x = window.innerWidth / 2 + remainingBeatsUntilBeat * 200;
-            rightSprite.position.y = window.innerHeight - 48 - 30;
-            rightSprite.alpha = Math.min(leftSprite.alpha + 0.001 * dt, 1);
+                rightSprite.position.x = window.innerWidth / 2 + remainingBeatsUntilBeat * 200;
+                rightSprite.position.y = window.innerHeight - 48 - 30;
+                rightSprite.alpha = Math.min(leftSprite.alpha + 0.001 * dt, 1);
+            }
         }
     }
 }

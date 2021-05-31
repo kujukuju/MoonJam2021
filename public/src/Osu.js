@@ -80,8 +80,9 @@ class Osu extends Ability {
                 return false;
             }
 
-            const position = entity.getPosition();
+            entity.setVisible();
 
+            const position = entity.getPosition();
             if (position[0] >= cameraAABB[0][0] + padding && position[0] < cameraAABB[1][0] - padding &&
                     position[1] >= cameraAABB[0][1] + padding && position[1] < cameraAABB[1][1] - padding) {
                 return true;
@@ -89,11 +90,6 @@ class Osu extends Ability {
 
             return false;
         });
-
-        if (potentialEntities.length === 0) {
-            this.destroy();
-            return;
-        }
 
         const currentBeat = MusicManager.getCurrentBeat(time);
         const startBeat = Math.round(currentBeat);

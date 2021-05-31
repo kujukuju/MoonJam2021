@@ -76,6 +76,16 @@ class GhoulEntity extends EnemyEntity {
         }
     }
 
+    setHidden() {
+        this._sprite.visible = false;
+        this._shadowSprite.visible = false;
+    }
+
+    setVisible() {
+        this._sprite.visible = true;
+        this._shadowSprite.visible = true;
+    }
+
     forceFrame(frame) {
         this._forcedFrame = frame;
     }
@@ -97,9 +107,10 @@ class GhoulEntity extends EnemyEntity {
         super.kill();
 
         const id = Entity.HUMANOID_HIT.play();
+        AudioStuff.initialize3D(Entity.HUMANOID_HIT, id, this._position);
         // TODO position this sound
 
-        AbilityInformation.addAbility(new DeadBatAbility(this));
+        AbilityInformation.addAbility(new DeadAbility(this, DeadAbility.GHOUL_TEXTURE));
     }
 
     getAttackChance() {

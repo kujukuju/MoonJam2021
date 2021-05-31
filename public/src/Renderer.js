@@ -2,6 +2,7 @@ class Renderer {
     static _application;
 
     static backgroundContainer;
+    static levelShadowContainer;
     static boundaryContainer;
     static shadowContainer;
     static arrowContainer;
@@ -11,6 +12,10 @@ class Renderer {
     static staticContainer;
 
     static initialize() {
+        // lol
+        // PIXI.settings.GC_MAX_IDLE *= 8;
+        PIXI.settings.MIPMAP_TEXTURES = PIXI.MIPMAP_MODES.OFF;
+
         Renderer._application = new PIXI.Application({
             antialias: true,
             width: window.innerWidth,
@@ -22,6 +27,7 @@ class Renderer {
         container.appendChild(Renderer._application.view);
 
         Renderer.backgroundContainer = new PIXI.Container();
+        Renderer.levelShadowContainer = new PIXI.Container();
         Renderer.boundaryContainer = new PIXI.Container();
         Renderer.shadowContainer = new PIXI.Container();
         Renderer.arrowContainer = new PIXI.Container();
@@ -32,6 +38,7 @@ class Renderer {
         Renderer.staticContainer = new PIXI.Container();
 
         Renderer._application.stage.addChild(Renderer.backgroundContainer);
+        Renderer._application.stage.addChild(Renderer.levelShadowContainer);
         Renderer._application.stage.addChild(Renderer.boundaryContainer);
         Renderer._application.stage.addChild(Renderer.shadowContainer);
         Renderer._application.stage.addChild(Renderer.arrowContainer);

@@ -93,9 +93,10 @@ class MoonEntity extends Entity {
             }
         }
 
-        if (EntityInformation.getEntityCount() > 1 && !AbilityInformation.hasOsuAbility()) {
+        if (!AbilityInformation.hasOsuAbility()) {
             const currentBeat = this._getRelativeBeat(time);
             const currentRoundedBeat = Math.round(this._getRelativeBeat(time));
+
             if (InputManager.mouseDownLeft && this._lastInteractionBeat < currentRoundedBeat) {
                 this._lastInteractionBeat = currentRoundedBeat;
 
@@ -142,34 +143,37 @@ class MoonEntity extends Entity {
                 }
             }
 
+            if (EntityInformation.getEntityCount() > 1) {
+                if (InputManager.keys[' '] && this._lastInteractionBeat < currentRoundedBeat && ChargeManager.canUlt()) {
+                    this._lastInteractionBeat = currentRoundedBeat;
+
+                    if (MusicManager.isOnBeat(time)) {
+                        AbilityInformation.addAbility(new Osu(time, MusicManager.getMSPerBeat()));
+
+                        const incorrectPercent = MusicManager.getPercentIncorrectBeat(currentBeat);
+                        if (incorrectPercent < 0.2) {
+                            // perfect
+                            AbilityInformation.addAbility(new PerfectWord(this._position));
+                        } else if (incorrectPercent < 0.6) {
+                            AbilityInformation.addAbility(new GreatWord(this._position));
+                        } else {
+                            AbilityInformation.addAbility(new GoodWord(this._position));
+                        }
+                    } else {
+                        const beatRemainder = MusicManager.convertBeatToMilliseconds(Math.ceil(currentBeat) - currentBeat) + MusicManager.getMSPerBeat();
+
+                        AbilityInformation.addAbility(new MissWord(this._position));
+                        AbilityInformation.addAbility(new Punishment(beatRemainder));
+                    }
+                }
+            }
+
+            // allowed to use even if enemies are dead
             if (InputManager.keys['shift'] && this._lastInteractionBeat < currentRoundedBeat && ChargeManager.canDash()) {
                 this._lastInteractionBeat = currentRoundedBeat;
 
                 if (MusicManager.isOnBeat(time)) {
                     AbilityInformation.addAbility(new Dash(MusicManager.getMSPerBeat()));
-
-                    const incorrectPercent = MusicManager.getPercentIncorrectBeat(currentBeat);
-                    if (incorrectPercent < 0.2) {
-                        // perfect
-                        AbilityInformation.addAbility(new PerfectWord(this._position));
-                    } else if (incorrectPercent < 0.6) {
-                        AbilityInformation.addAbility(new GreatWord(this._position));
-                    } else {
-                        AbilityInformation.addAbility(new GoodWord(this._position));
-                    }
-                } else {
-                    const beatRemainder = MusicManager.convertBeatToMilliseconds(Math.ceil(currentBeat) - currentBeat) + MusicManager.getMSPerBeat();
-
-                    AbilityInformation.addAbility(new MissWord(this._position));
-                    AbilityInformation.addAbility(new Punishment(beatRemainder));
-                }
-            }
-
-            if (InputManager.keys[' '] && this._lastInteractionBeat < currentRoundedBeat && ChargeManager.canUlt()) {
-                this._lastInteractionBeat = currentRoundedBeat;
-
-                if (MusicManager.isOnBeat(time)) {
-                    AbilityInformation.addAbility(new Osu(time, MusicManager.getMSPerBeat()));
 
                     const incorrectPercent = MusicManager.getPercentIncorrectBeat(currentBeat);
                     if (incorrectPercent < 0.2) {
@@ -203,6 +207,16 @@ class MoonEntity extends Entity {
 
         this._forcedSwordStage = -1;
         this._forcedGunStage = -1;
+    }
+
+    setHidden() {
+        this._sprite.visible = false;
+        this._shadowSprite.visible = false;
+    }
+
+    setVisible() {
+        this._sprite.visible = true;
+        this._shadowSprite.visible = true;
     }
 
     forceSwordStage(stage) {

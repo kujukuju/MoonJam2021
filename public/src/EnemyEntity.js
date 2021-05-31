@@ -273,7 +273,9 @@ class EnemyEntity extends Entity {
     kill() {
         super.kill();
 
-        ChargeManager.addPerfect();
+        if (!AbilityInformation.hasOsuAbility()) {
+            ChargeManager.addPerfect();
+        }
     }
 
     _calculateBeatAccel() {

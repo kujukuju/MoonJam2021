@@ -38,9 +38,9 @@ class MissWord extends Ability {
             MissWord.MISS2.play();
         }
 
-        ChargeManager.consumeUltCharge();
-        ChargeManager.consumeGunCharge();
-        ChargeManager.consumeDashCharge();
+        // ChargeManager.consumeUltCharge();
+        // ChargeManager.consumeGunCharge();
+        // ChargeManager.consumeDashCharge();
     }
 
     update(time, dt) {
