@@ -126,6 +126,7 @@ class StateManager {
             if (StateManager._currentRoom >= StateManager._potentialNextDoorRoom) {
                 StateManager._potentialNextDoorRoom++;
 
+                console.log('opening doors for room ', StateManager._currentRoom);
                 LevelManager.level.openDoorsForRoom(StateManager._currentRoom);
 
                 if (StateManager._currentRoom === 0) {
@@ -150,7 +151,6 @@ class StateManager {
     }
 
     static onMusicChange() {
-        console.log('music changed ', MusicManager.getCurrentRoomName());
         if (MusicManager.getCurrentRoomName() === 'calibration') {
             StateManager._calibrationStartTime = Date.now();
         } else if (MusicManager.isStageMusic()) {
@@ -159,6 +159,10 @@ class StateManager {
                 EntityInformation.initialize();
                 LevelManager.level.reset();
             }
+        }
+
+        if (EntityInformation.getClientEntity()) {
+            EntityInformation.getClientEntity().clearMouseDown();
         }
     }
 
@@ -169,6 +173,10 @@ class StateManager {
         AbilityInformation.destroyAllAbilities();
         LevelManager.level.resetBeat();
         ChargeManager.reset();
+
+        if (EntityInformation.getClientEntity()) {
+            EntityInformation.getClientEntity().clearMouseDown();
+        }
 
         MusicManager.nextSong(StateManager._currentRoom);
     }

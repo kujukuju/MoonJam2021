@@ -137,7 +137,7 @@ class Level {
             let index = -1;
             for (let a = 0; a < this._wallProxies.length; a++) {
                 const proxy = this._wallProxies[a];
-                console.log(proxy);
+                console.log(room, proxy);
                 if (proxy.userData === doors[i].polygon) {
                     index = a;
                     break;
@@ -323,6 +323,11 @@ class Level {
                                         console.error('Found a spawn without a room property.', object.id);
                                     }
 
+                                    // TODO hacky test stuff
+                                    if (room === 1 && object.id !== 764) {
+                                        continue;
+                                    }
+
                                     if (!this._enemySpawns[room]) {
                                         this._enemySpawns[room] = [];
                                     }
@@ -341,6 +346,11 @@ class Level {
                                         console.error('Found a spawn without a room property.', object.id);
                                     }
 
+                                    // TODO hacky test stuff
+                                    if (room === 1 && object.id !== 764) {
+                                        continue;
+                                    }
+
                                     if (!this._enemySpawns[room]) {
                                         this._enemySpawns[room] = [];
                                     }
@@ -357,6 +367,11 @@ class Level {
 
                                     if (room === -1) {
                                         console.error('Found a spawn without a room property.', object.id);
+                                    }
+
+                                    // TODO hacky test stuff
+                                    if (room === 1 && object.id !== 764) {
+                                        continue;
                                     }
 
                                     if (!this._enemySpawns[room]) {

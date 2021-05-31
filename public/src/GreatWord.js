@@ -23,6 +23,7 @@ class GreatWord extends Ability {
         this._sprite.scale.x = 0;
         this._sprite.scale.y = 0;
         this._sprite.visible = false;
+        this._sprite.zIndex = position[1];
         Renderer.container.addChild(this._sprite);
 
         this._deltaTime = 0;

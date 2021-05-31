@@ -121,13 +121,13 @@ class Osu extends Ability {
                 const potential = potentialEntities[i];
                 const relativeBeat = potential._getRelativeBeat(currentSearchingTime);
                 const roundedRelativeBeat = Math.round(relativeBeat);
-                const isBeat = Math.abs(relativeBeat - roundedRelativeBeat) < 0.1;
+                const isBeat = Math.abs(relativeBeat - roundedRelativeBeat) < 0.2;
                 if (!isBeat) {
                     continue;
                 }
 
                 const beatTime = potential._getApproximateBeatTime(roundedRelativeBeat);
-                if (beatTime < minimumAllowedBeatTime + 40) {
+                if (beatTime < minimumAllowedBeatTime + 20) {
                     continue;
                 }
 
@@ -200,7 +200,7 @@ class Osu extends Ability {
             if (currentSequence === 0) {
                 currentSearchingBeat = Math.round(currentSearchingBeat) + 1;
             } else {
-                currentSearchingBeat += 0.05;
+                currentSearchingBeat += 0.01;
             }
         }
 
