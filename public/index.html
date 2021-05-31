@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript" src="libs/howler.js"></script>
+    <script type="text/javascript" src="libs/pixi.js"></script>
+    <script type="text/javascript" src="libs/box2d.min.js"></script>
+
+    <!-- load music first because it can be dangerous if you try to play and its not loaded -->
+    <script type="text/javascript" src="src/MusicConstants.js"></script>
+
+    <script type="text/javascript" src="src/Entity.js"></script>
+    <script type="text/javascript" src="src/EnemyEntity.js"></script>
+    <script type="text/javascript" src="src/BatEntity.js"></script>
+    <script type="text/javascript" src="src/MoonEntity.js"></script>
+    <script type="text/javascript" src="src/GhoulEntity.js"></script>
+
+    <script type="text/javascript" src="src/Ability.js"></script>
+    <script type="text/javascript" src="src/SwordSwing.js"></script>
+    <script type="text/javascript" src="src/Arrow.js"></script>
+    <script type="text/javascript" src="src/BatBite.js"></script>
+    <script type="text/javascript" src="src/HeartDead.js"></script>
+    <script type="text/javascript" src="src/DeadBatAbility.js"></script>
+    <script type="text/javascript" src="src/AlertAbility.js"></script>
+    <script type="text/javascript" src="src/GoodWord.js"></script>
+    <script type="text/javascript" src="src/GreatWord.js"></script>
+    <script type="text/javascript" src="src/MissWord.js"></script>
+    <script type="text/javascript" src="src/GunPrep.js"></script>
+    <script type="text/javascript" src="src/Bullet.js"></script>
+    <script type="text/javascript" src="src/Dash.js"></script>
+    <script type="text/javascript" src="src/Punishment.js"></script>
+    <script type="text/javascript" src="src/Osu.js"></script>
+
+    <script type="text/javascript" src="src/AbilityInformation.js"></script>
+    <script type="text/javascript" src="src/AudioStuff.js"></script>
+    <script type="text/javascript" src="src/BoundaryRenderer.js"></script>
+    <script type="text/javascript" src="src/Camera.js"></script>
+    <script type="text/javascript" src="src/ChargeManager.js"></script>
+    <script type="text/javascript" src="src/EntityInformation.js"></script>
+    <script type="text/javascript" src="src/GateManager.js"></script>
+    <script type="text/javascript" src="src/GroundRenderer.js"></script>
+    <script type="text/javascript" src="src/Initialize.js"></script>
+    <script type="text/javascript" src="src/InputManager.js"></script>
+    <script type="text/javascript" src="src/Level.js"></script>
+    <script type="text/javascript" src="src/LevelConstants.js"></script>
+    <script type="text/javascript" src="src/LevelManager.js"></script>
+    <script type="text/javascript" src="src/LogicLoop.js"></script>
+    <script type="text/javascript" src="src/Loop.js"></script>
+    <script type="text/javascript" src="src/MathHelper.js"></script>
+    <script type="text/javascript" src="src/Music.js"></script>
+    <script type="text/javascript" src="src/MusicManager.js"></script>
+    <script type="text/javascript" src="src/NoteBar.js"></script>
+    <script type="text/javascript" src="src/PerfectWord.js"></script>
+    <script type="text/javascript" src="src/Renderer.js"></script>
+    <script type="text/javascript" src="src/StateManager.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="canvas-container" class="canvasContainer"></div>
+    <div id="main-menu" class="mainMenu">
+        <div class="left">
+            <div class="button" id="embark">
+                Embark
+            </div>
+            <div class="button" id="calibrate">
+                Calibrate
+            </div>
+        </div>
+        <div class="right">
+            <div>
+                Made Entirely From Scratch
+            </div>
+            <br />
+            <div>
+                <div class="lighter">Programming By</div> Kuju
+            </div>
+            <div>
+                <div class="lighter">Music By</div> ShinjiTheRealG
+            </div>
+            <div>
+                <div class="lighter">Art By</div> ORANGEJUICE
+            </div>
+        </div>
+    </div>
+    <div id="calibration-screen" class="calibrationScreen" style="display:none;">
+        <div class="calibrationButton">
+            <div class="text">Click On The Beat To Calibrate<br /><br /><div style="font-size:24px">you don't have to hit every note</div></div>
+        </div>
+    </div>
+    <div id="calibration-result-screen" class="calibrationResultScreen" style="display:none;">
+        <div class="calibrationResult">
+            <div class="text" id="calibration-result-text">120</div>
+        </div>
+    </div>
+    <div id="death-screen" class="deathScreen" style="display:none;">
+        <div class="deathText">You die to suffer another night.</div>
+        <img class="moonSpriteDeath" src="assets/moon%20sprite.png" draggable="false" />
+        <div class="button" id="die-again-button">
+            Die Again
+        </div>
+    </div>
+</body>
+</html>

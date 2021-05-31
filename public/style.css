@@ -1,0 +1,231 @@
+html, body {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'meta', serif;
+
+    user-select: none;
+}
+
+.canvasContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mainMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 100;
+}
+
+.mainMenu .left {
+    width: 40%;
+
+    padding-top: 30vh;
+
+    text-align: right;
+}
+
+.mainMenu .left .button {
+    display: inline-block;
+
+    font-size: 72px;
+
+    font-weight: bolder;
+
+    padding-right: 48px;
+    border-right: 24px solid #000000;
+
+    transform-origin: 100% 50%;
+    transform: scale(1);
+
+    transition: 100ms transform ease;
+}
+
+.mainMenu .left .button:hover {
+    transform: scale(1.1);
+}
+
+.mainMenu .left .button + .button {
+    margin-top: 5vh;
+}
+
+.mainMenu .right {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 25%;
+
+    padding-top: 30vh;
+
+    text-align: left;
+
+    font-size: 24px;
+
+    font-weight: bolder;
+
+    line-height: 2;
+}
+
+.mainMenu .right .lighter {
+    display: inline;
+
+    font-weight: bold;
+}
+
+.deathScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 200;
+
+    background-color: #000000;
+}
+
+.deathScreen .deathText {
+    position: absolute;
+    top: 30vh;
+    left: 20vw;
+
+    width: 50%;
+
+    font-size: 72px;
+    color: #cfcfcf;
+}
+
+.deathScreen .moonSpriteDeath {
+    position: absolute;
+    right: 10vw;
+    top: 0vh;
+}
+
+.deathScreen .button {
+    position: absolute;
+    top: 65vh;
+    left: 20vw;
+
+    font-size: 128px;
+    font-weight: bolder;
+    color: #ffffff;
+
+    transform-origin: 0% 50%;
+    transform: scale(1);
+
+    padding-left: 48px;
+    border-left: 24px solid #ffffff;
+
+    transition: 100ms transform ease;
+}
+
+.deathScreen .button:hover {
+    transform: scale(1.1);
+}
+
+.calibrationScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 200;
+
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.calibrationScreen.hit {
+    /*background-color: rgba(120, 75, 78, 0.5);*/
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.calibrationScreen .calibrationButton {
+    position: relative;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 512px;
+    height: 512px;
+
+    box-sizing: border-box;
+
+    margin: 0 auto;
+
+    padding: 48px;
+
+    border: 48px solid #ffffff;
+    background-color: #1d1d1d;
+
+    color: #ffffff;
+    font-size: 48px;
+
+    text-align: center;
+}
+
+.calibrationScreen .calibrationButton .text {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+.calibrationResultScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 300;
+
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.calibrationResultScreen .calibrationResult {
+    position: relative;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 512px;
+    height: 512px;
+
+    box-sizing: border-box;
+
+    margin: 0 auto;
+
+    padding: 48px;
+
+    border: 48px solid #ffffff;
+    background-color: #1d1d1d;
+
+    color: #ffffff;
+    font-size: 48px;
+
+    text-align: center;
+}
+
+.calibrationResultScreen .calibrationResult .text {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+@font-face {
+    font-family: "meta";
+    src: url('assets/Metamorphous-Regular.ttf') format('truetype');
+}

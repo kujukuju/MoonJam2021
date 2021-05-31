@@ -1,0 +1,38 @@
+{
+  "name": "MoonJam2021",
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "build": {
+    "productName": "Game",
+    "appId": "com.websitename.app",
+    "win": {
+      "target": [
+        "portable"
+      ]
+    },
+    "portable": {
+      "artifactName": "moonjam.exe"
+    },
+    "directories": {
+      "output": "output",
+      "app": ".",
+      "buildResources": "public/"
+    },
+    "files": [
+      "public/",
+      "main.js"
+    ]
+  },
+  "scripts": {
+    "start": "set NODE_ENV=dev && electron .",
+    "deploy": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^12.0.6",
+    "electron-builder": "^22.11.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
