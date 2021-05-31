@@ -284,6 +284,10 @@ class Entity {
         return MusicManager.getApproximateBeatTime(beat);
     }
 
+    _getNextBeatTimeAfterTime(time) {
+        throw 'You must sgsdg.';
+    }
+
     _getAccel() {
         throw 'You must override _getAccel.';
     }

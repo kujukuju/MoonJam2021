@@ -1,5 +1,5 @@
 class HeartDead extends Ability {
-    static TEXTURE = PIXI.Texture.from('assets/heart-dead.png');
+    static TEXTURE = PIXI.Texture.from('assets/heart-dead2.png');
     static TEXTURES = [
         new PIXI.Texture(HeartDead.TEXTURE, new PIXI.Rectangle(0, 0, 64, 64)),
         new PIXI.Texture(HeartDead.TEXTURE, new PIXI.Rectangle(64, 0, 64, 64)),
@@ -23,8 +23,8 @@ class HeartDead extends Ability {
         this._sprite.loop = false;
         this._sprite.anchor.x = 0.5;
         this._sprite.anchor.y = 1;
-        this._sprite.scale.x = 4;
-        this._sprite.scale.y = 4;
+        this._sprite.scale.x = 2;
+        this._sprite.scale.y = 2;
         this._sprite.visible = false;
         Renderer.container.addChild(this._sprite);
 

@@ -124,6 +124,24 @@ class Music {
         this._bassPercentage = percentage;
     }
 
+    getEventTimeAfterTime(time, event) {
+        // we don't consider the start here, because the event labels start at offset 0
+        const delta = Math.max((time + MusicConstants.CALIBRATION_OFFSET) - this._playTime, 0) / 1000;
+
+        const events = this._events[event];
+        if (!events) {
+            return 0;
+        }
+
+        for (let i = 0; i < events.length; i++) {
+            if (delta < events[i] - 0.001) {
+                return this._playTime + events[i] * 1000;
+            }
+        }
+
+        return 0;
+    }
+
     getCurrentEventBeat(time, event) {
         // we don't consider the start here, because the event labels start at offset 0
         const delta = Math.max((time + MusicConstants.CALIBRATION_OFFSET) - this._playTime, 0) / 1000;

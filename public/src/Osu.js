@@ -91,47 +91,50 @@ class Osu extends Ability {
             return false;
         });
 
+        // COFFEE BREAK BRB
+
+
+
         const currentBeat = MusicManager.getCurrentBeat(time);
         const startBeat = Math.round(currentBeat);
         const startTime = MusicManager.convertBeatToMilliseconds(startBeat - currentBeat) + time;
+        const minimumInterval = MusicManager.convertBeatToMilliseconds(1) / 4;
 
-        // 0 is force skip events until next real beat
-        // 1 is use all available events spaced more than 0.2 beats apart
         let currentSequence = 0;
-
         const lastPosition = [ownerPosition[0], ownerPosition[1]];
 
-        // [[time, position, entityID], ...]
+        // why is this randomly offbeat....
+
         this._sequence = [];
         this._sequenceSprites = [];
         this._missed = [];
-        // generating this is gonna be hard...
-        let currentSearchingBeat = startBeat + 3;
-        let minimumAllowedBeatTime = 0;
-        while (currentSearchingBeat < startBeat + 30) {
+        let earliestDesiredTime = startTime + MusicManager.convertBeatToMilliseconds(3);
+        while (earliestDesiredTime < startTime + MusicManager.convertBeatToMilliseconds(33)) {
             let bestIndex = -1;
             let bestPosition = null;
             let bestEntityID = 0;
             let bestDistance = Number.MAX_SAFE_INTEGER;
-            let bestBeatTime = 0;
+            let bestTime = 0;
 
-            const currentSearchingTime = startTime + MusicManager.convertBeatToMilliseconds(currentSearchingBeat - startBeat);
+            const deltaBlahTime = earliestDesiredTime - startTime;
+            const deltaBeats = Math.floor(deltaBlahTime / MusicManager.convertBeatToMilliseconds(1));
+
+            const nextBeatTime = startTime + MusicManager.convertBeatToMilliseconds(deltaBeats + 1);
 
             for (let i = 0; i < potentialEntities.length; i++) {
                 const potential = potentialEntities[i];
-                const relativeBeat = potential._getRelativeBeat(currentSearchingTime);
-                const roundedRelativeBeat = Math.round(relativeBeat);
-                const isBeat = Math.abs(relativeBeat - roundedRelativeBeat) < 0.2;
-                if (!isBeat) {
+                let proposedTime = potential._getNextBeatTimeAfterTime(earliestDesiredTime);
+                const proposedBeatFourthNote = MusicManager.getCurrentBeat(proposedTime) * 4;
+                const roundedProposedBeat = Math.round(proposedBeatFourthNote);
+                if (Math.abs(proposedBeatFourthNote - roundedProposedBeat) > 0.2) {
+                    proposedTime = nextBeatTime;
+                }
+                proposedTime = Math.min(proposedTime, nextBeatTime);
+
+                if (proposedTime - earliestDesiredTime < minimumInterval) {
                     continue;
                 }
 
-                const beatTime = potential._getApproximateBeatTime(roundedRelativeBeat);
-                if (beatTime < minimumAllowedBeatTime + 20) {
-                    continue;
-                }
-
-                // we could do this better by getting the actual entity relative beat and converting it into beat and real time but god thats a lot of shit
                 const potentialPosition = [potential.getPosition()[0], potential.getPosition()[1] - potential.getHeight()];
                 const delta = [
                     potentialPosition[0] - lastPosition[0],
@@ -143,14 +146,14 @@ class Osu extends Ability {
                     bestPosition = [potentialPosition[0], potentialPosition[1]];
                     bestEntityID = potential.getEntityID();
                     bestDistance = distance;
-                    bestBeatTime = beatTime;
+                    bestTime = proposedTime;
                 }
             }
 
             if (bestPosition) {
                 // we found an entity for this beat, for better or worse lol
-                minimumAllowedBeatTime = bestBeatTime
-                this._sequence.push([bestBeatTime, bestPosition, bestEntityID]);
+                earliestDesiredTime = bestTime
+                this._sequence.push([bestTime, bestPosition, bestEntityID]);
 
                 const screenPosition = Camera.convertToScreenSpace(bestPosition, Osu.ZOOM_DENSITY);
 
@@ -178,11 +181,12 @@ class Osu extends Ability {
                     ring,
                 ]);
                 this._missed.push(false);
+                lastPosition[0] = bestPosition[0];
+                lastPosition[1] = bestPosition[1];
 
                 potentialEntities.splice(bestIndex, 1);
-
-                // skip farther so we can avoid getting another note on the same beat and considering it valid
-                // currentSearchingBeat += 0.15;
+            } else {
+                earliestDesiredTime += 100;
             }
 
             if (potentialEntities.length === 0) {
@@ -192,15 +196,17 @@ class Osu extends Ability {
             if (currentSequence === 0) {
                 currentSequence = 1;
             } else {
-                if (Math.random() < 0.2) {
+                if (Math.random() < 0.4) {
                     currentSequence = 0;
                 }
             }
 
+            // skip ahead a beat
             if (currentSequence === 0) {
-                currentSearchingBeat = Math.round(currentSearchingBeat) + 1;
-            } else {
-                currentSearchingBeat += 0.01;
+                const deltaTime = earliestDesiredTime - startTime;
+                const currentBeat = Math.floor(deltaTime / MusicManager.convertBeatToMilliseconds(1));
+                const desiredBeat = currentBeat + 1;
+                earliestDesiredTime  = startTime + MusicManager.convertBeatToMilliseconds(desiredBeat);
             }
         }
 
@@ -300,7 +306,7 @@ class Osu extends Ability {
                     const circleAlpha = MathHelper.easeInOut(Math.min(progressToBeat * 2, 1));
                     // const circleScale = MathHelper.easeInOut(progressToBeat) * 0.2 + 0.2;
                     const ringAlpha = MathHelper.easeInOut(Math.min(progressToBeat * 8, 1));
-                    const ringScale = 0.6 - Math.pow(progressToBeat, 2) * 0.4;
+                    const ringScale = 0.6 - Math.pow(progressToBeat, 1) * 0.4;
 
                     const endingAlpha = MathHelper.easeInOut(1 - scaledProgressAfterBeat);
 

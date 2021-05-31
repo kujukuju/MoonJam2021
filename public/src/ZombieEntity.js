@@ -106,8 +106,8 @@ class ZombieEntity extends EnemyEntity {
         AbilityInformation.addAbility(new BatBite(this));
     }
 
-    kill() {
-        super.kill();
+    kill(gun) {
+        super.kill(gun);
 
         const id = Entity.HUMANOID_HIT.play();
         AudioStuff.initialize3D(Entity.HUMANOID_HIT, id, this._position);
@@ -144,6 +144,10 @@ class ZombieEntity extends EnemyEntity {
 
     _getApproximateBeatTime(beat) {
         return MusicManager.getApproximateTimeForEvent(Math.round(beat), 'lead');
+    }
+
+    _getNextBeatTimeAfterTime(time) {
+        return MusicManager.getEventTimeAfterTime(time, 'lead');
     }
 
     // _getRelativeBeat(time) {

@@ -71,6 +71,14 @@ class MusicManager {
         return MusicManager._currentRoomName;
     }
 
+    static getEventTimeAfterTime(time, event) {
+        if (!MusicManager.music) {
+            return 0;
+        }
+
+        return MusicManager.music.getEventTimeAfterTime(time, event);
+    }
+
     static getPercentIncorrectBeat(beat) {
         if (!MusicManager.music) {
             return 0;
@@ -85,7 +93,6 @@ class MusicManager {
     }
 
     static nextSong(room) {
-        console.log('trying to load ', room);
         if (!MusicConstants.ROOMS[room]) {
             console.error('Invalid room index. ', room);
             return;

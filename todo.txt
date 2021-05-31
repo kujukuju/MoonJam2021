@@ -4,10 +4,6 @@ add other other 2 gates
 
 boss fight mechanics??
 
---- probably very important
-
-need arrows pointing to remaining enemies when none are on your screen
-
 REWORK OSU BECAUSE IT DOESNT WORK
 
 --- STRETCH GOALS HERE
@@ -19,23 +15,6 @@ the city in the background of the bridge
 FIX LAG?? HOW THOUGH
 
 --- 8 hours?
-
---- 1 hour
-
-3d lighting from torches and shit I guess, maybe moon is holding a torch instead of a sword
-
---- 4 hours
-
-when theres no beat you can move freely
-
-add the remainder of the physics once orangejuice finishes all the art
-
---- 1 hour
-
-very simply add enemy entity logic where if theyre inside a designated area (building) and they have a target thats
-not inside that area, they first have to go to a point before going to him
-
-I did LoS instead. is that good enough?
 
 --- stretch
 

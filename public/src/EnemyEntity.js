@@ -270,10 +270,10 @@ class EnemyEntity extends Entity {
         return 80;
     }
 
-    kill() {
+    kill(gun) {
         super.kill();
 
-        if (!AbilityInformation.hasOsuAbility()) {
+        if (!AbilityInformation.hasOsuAbility() && !gun) {
             ChargeManager.addPerfect();
         }
     }

@@ -103,8 +103,8 @@ class GhoulEntity extends EnemyEntity {
         AbilityInformation.addAbility(new BatBite(this));
     }
 
-    kill() {
-        super.kill();
+    kill(gun) {
+        super.kill(gun);
 
         const id = Entity.HUMANOID_HIT.play();
         AudioStuff.initialize3D(Entity.HUMANOID_HIT, id, this._position);
@@ -138,6 +138,10 @@ class GhoulEntity extends EnemyEntity {
 
     _getApproximateBeatTime(beat) {
         return MusicManager.getApproximateTimeForEvent(Math.round(beat), 'bass');
+    }
+
+    _getNextBeatTimeAfterTime(time) {
+        return MusicManager.getEventTimeAfterTime(time, 'bass');
     }
 
     // _getRelativeBeat(time) {
