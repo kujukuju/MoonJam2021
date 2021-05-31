@@ -243,6 +243,12 @@ class MoonEntity extends Entity {
         return 410 * 0.85;
     }
 
+    kill() {
+        super.kill();
+
+        AbilityInformation.addAbility(new DeadAbility(this, DeadAbility.MOON_TEXTURE));
+    }
+
     destroy() {
         super.destroy();
 

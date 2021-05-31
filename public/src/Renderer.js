@@ -11,6 +11,7 @@ class Renderer {
     static container;
     static staticOsuContainer;
     static staticContainer;
+    static staticEndContainer;
 
     static initialize() {
         // lol
@@ -43,6 +44,7 @@ class Renderer {
         Renderer.container.sortableChildren = true;
         Renderer.staticOsuContainer = new PIXI.Container();
         Renderer.staticContainer = new PIXI.Container();
+        Renderer.staticEndContainer = new PIXI.Container();
 
         Renderer._application.stage.addChild(Renderer.backgroundContainer);
         Renderer._application.stage.addChild(Renderer.levelShadowContainer);
@@ -54,6 +56,7 @@ class Renderer {
         Renderer._application.stage.addChild(Renderer.container);
         Renderer._application.stage.addChild(Renderer.staticOsuContainer);
         Renderer._application.stage.addChild(Renderer.staticContainer);
+        Renderer._application.stage.addChild(Renderer.staticEndContainer);
     }
 }
 

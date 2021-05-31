@@ -72,7 +72,8 @@ class ChargeManager {
     }
 
     static update(time, dt) {
-        if (MusicManager.isStageMusic()) {
+        const visible = MusicManager.isStageMusic() && MusicManager.getMSPerBeat() > 0;
+        if (visible) {
             ChargeManager._gunSprite.alpha = Math.min(ChargeManager._gunSprite.alpha + dt * 0.001, 1);
             ChargeManager._dashSprite.alpha = Math.min(ChargeManager._dashSprite.alpha + dt * 0.001, 1);
             ChargeManager._ultSprite.alpha = Math.min(ChargeManager._ultSprite.alpha + dt * 0.001, 1);
@@ -126,7 +127,7 @@ class ChargeManager {
     }
 
     static canDash() {
-        return true; ChargeManager._chargeDash === 1;
+        return true;
     }
 
     static consumeDashCharge() {

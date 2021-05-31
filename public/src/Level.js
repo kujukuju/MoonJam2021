@@ -12,6 +12,14 @@ class Level {
         'HOUSE NEW 22.png': 422 / 870,
         'HOUSE NEW 31.png': 712 / 905,
         'HOUSE NEW 32.png': 564 / 1010,
+        'BLOOD TRAIL 1.png': -1,
+        'BLOOD TRAIL 2.png': -1,
+        'BLOOD TRAIL 3.png': -1,
+        'BLOOD TRAIL 4.png': -1,
+        'BLOOD TRAIL 5.png': -1,
+        'BLOOD 1.png': -1,
+        'BLOOD 2.png': -1,
+        'BLOOD 3.png': -1,
     };
 
     _sprite;
@@ -370,12 +378,12 @@ class Level {
                                     }
 
                                     // TODO hacky test stuff
-                                    if (room === 1 && object.id !== 764) {
-                                        continue;
-                                    }
-                                    if (room === 2 && object.id !== 966) {
-                                        continue;
-                                    }
+                                    // if (room === 1 && object.id !== 764) {
+                                    //     continue;
+                                    // }
+                                    // if (room === 2 && object.id !== 966) {
+                                    //     continue;
+                                    // }
 
                                     if (!this._enemySpawns[room]) {
                                         this._enemySpawns[room] = [];
@@ -396,12 +404,12 @@ class Level {
                                     }
 
                                     // TODO hacky test stuff
-                                    if (room === 1 && object.id !== 764) {
-                                        continue;
-                                    }
-                                    if (room === 2 && object.id !== 966) {
-                                        continue;
-                                    }
+                                    // if (room === 1 && object.id !== 764) {
+                                    //     continue;
+                                    // }
+                                    // if (room === 2 && object.id !== 966) {
+                                    //     continue;
+                                    // }
 
                                     if (!this._enemySpawns[room]) {
                                         this._enemySpawns[room] = [];
@@ -422,12 +430,12 @@ class Level {
                                     }
 
                                     // TODO hacky test stuff
-                                    if (room === 1 && object.id !== 764) {
-                                        continue;
-                                    }
-                                    if (room === 2 && object.id !== 966) {
-                                        continue;
-                                    }
+                                    // if (room === 1 && object.id !== 764) {
+                                    //     continue;
+                                    // }
+                                    // if (room === 2 && object.id !== 966) {
+                                    //     continue;
+                                    // }
 
                                     if (!this._enemySpawns[room]) {
                                         this._enemySpawns[room] = [];

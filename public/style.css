@@ -51,10 +51,22 @@ html, body {
     z-index: 100;
 }
 
+.mainMenu .title {
+    position: absolute;
+    top: 15vh;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 50px;
+
+    font-weight: bolder;
+}
+
 .mainMenu .left {
     width: 40%;
 
-    padding-top: 30vh;
+    padding-top: 40vh;
 
     text-align: right;
 }
@@ -88,9 +100,9 @@ html, body {
     top: 0;
     right: 0;
 
-    width: 25%;
+    width: 23%;
 
-    padding-top: 30vh;
+    padding-top: 40vh;
 
     text-align: left;
 

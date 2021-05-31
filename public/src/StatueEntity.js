@@ -1,45 +1,27 @@
-class BossEntity extends EnemyEntity {
-    static TEXTURE = PIXI.Texture.from('assets/vamp-sheet.png');
-    static TEXTURES = [
-        new PIXI.Texture(BossEntity.TEXTURE, new PIXI.Rectangle(0, 0, 386, 499)),
-        new PIXI.Texture(BossEntity.TEXTURE, new PIXI.Rectangle(386, 0, 386, 499)),
-        new PIXI.Texture(BossEntity.TEXTURE, new PIXI.Rectangle(386 * 2, 0, 386, 499)),
-        new PIXI.Texture(BossEntity.TEXTURE, new PIXI.Rectangle(386 * 3, 0, 386, 499)),
-        new PIXI.Texture(BossEntity.TEXTURE, new PIXI.Rectangle(386 * 4, 0, 386, 499)),
-    ];
+class StatueEntity extends EnemyEntity {
+    static TEXTURE = PIXI.Texture.from('assets/GARGOYLE.png');
 
     static ANCHOR = [
-        104 / 386,
-        460 / 499,
+        106 / 500,
+        408 / 445,
     ];
 
     _sprite;
 
-    _lastFrameBeat;
-    _currentFrame;
-
-    _forcedFrame;
-
     constructor() {
         super();
 
-        this._sprite = new PIXI.AnimatedSprite(BossEntity.TEXTURES);
-        this._sprite.anchor.x = BossEntity.ANCHOR[0];
-        this._sprite.anchor.y = BossEntity.ANCHOR[1];
-        // this._sprite.scale.x = 0.8;
-        // this._sprite.scale.y = 0.8;
+        this._sprite = new PIXI.Sprite(StatueEntity.TEXTURE);
+        this._sprite.anchor.x = StatueEntity.ANCHOR[0];
+        this._sprite.anchor.y = StatueEntity.ANCHOR[1];
+        this._sprite.anchor.x = 0.5;
+        this._sprite.anchor.y = 1;
         this._sprite.visible = false;
         this._sprite.alpha = 0;
-        this._sprite.gotoAndStop(0);
         Renderer.container.addChild(this._sprite);
 
         this._shadowSprite.scale.x = 1.4;
         this._shadowSprite.scale.y = 1.4;
-
-        this._lastFrameBeat = 0;
-        this._currentFrame = 0;
-
-        this._forcedFrame = -1;
     }
 
     update(time, dt) {
@@ -61,20 +43,6 @@ class BossEntity extends EnemyEntity {
         } else if (this._velocity[0] > 0) {
             this._sprite.scale.x = Math.abs(this._sprite.scale.x);
         }
-
-        const beat = Math.floor(this._getRelativeBeat(time));
-        if (beat > this._lastFrameBeat) {
-            this._lastFrameBeat = beat;
-
-            this._currentFrame++;
-
-            this._sprite.gotoAndStop(this._currentFrame % (this._sprite.textures.length - 2));
-        }
-
-        if (this._forcedFrame !== -1) {
-            this._sprite.gotoAndStop(this._forcedFrame);
-            this._forcedFrame = -1;
-        }
     }
 
     setHidden() {
@@ -88,7 +56,7 @@ class BossEntity extends EnemyEntity {
     }
 
     forceFrame(frame) {
-        this._forcedFrame = frame;
+
     }
 
     getRadius() {
@@ -96,28 +64,22 @@ class BossEntity extends EnemyEntity {
     }
 
     getHeight() {
-        return 670 * 0.8;
+        return 422 * 0.5;
     }
 
     attack() {
         // do damage, make noise
-        AbilityInformation.addAbility(new BossAttack(this));
+        AbilityInformation.addAbility(new BatBite(this));
     }
 
     kill(gun) {
-        super.kill();
+        super.kill(gun);
 
         const id = Entity.HUMANOID_HIT.play();
         AudioStuff.initialize3D(Entity.HUMANOID_HIT, id, this._position);
         // TODO position this sound
 
-        if (BossManager._phase === 4) {
-            AbilityInformation.addAbility(new PermaDeadAbility(this, DeadAbility.VAMP_TEXTURE));
-        } else {
-            AbilityInformation.addAbility(new DeadAbility(this, DeadAbility.VAMP_TEXTURE));
-        }
-
-        BossManager.kill();
+        AbilityInformation.addAbility(new DeadAbility(this, DeadAbility.STATUE_TEXTURE));
     }
 
     getAttackChance() {
@@ -154,4 +116,20 @@ class BossEntity extends EnemyEntity {
     _getNextBeatTimeAfterTime(time) {
         return MusicManager.getEventTimeAfterTime(time, 'lead3');
     }
+
+    // _getRelativeBeat(time) {
+    //     return MusicManager.getCurrentBeat(time);
+    //     // return MusicManager.getCurrentEventBeat(time, 'bat');
+    // }
+    //
+    // _getBeatDuration(time) {
+    //     return MusicManager.convertBeatToMilliseconds(1);
+    //
+    //     // const beat = this._getRelativeBeat(time);
+    //     // return MusicManager.getEventDuration(Math.round(beat), 'bat');
+    // }
+    //
+    // _getApproximateBeatTime(beat) {
+    //     return MusicManager.getApproximateBeatTime(beat);
+    // }
 }

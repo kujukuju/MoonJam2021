@@ -5,14 +5,20 @@ class BossManager {
     ];
 
     static STATUE_POSITIONS = [
-        [-3200.00, 14209.00],
-        [-3200.00, 15655.00],
-        [-2621.00, 14209.00],
-        [-2621.00, 15655.00],
-        [-2106.00, 14209.00],
-        [-2106.00, 15655.00],
-        [-1621.00, 14209.00],
-        [-1621.00, 15655.00],
+        [-2496.00, 14222.00],
+        [-2496.00, 15586.00],
+        [-1838.00, 14222.00],
+        [-1838.00, 15586.00],
+        [-1170.00, 14222.00],
+        [-1170.00, 15586.00],
+    ];
+
+    static POTENTIAL_SPAWNS = [
+        [-3616.00, 14897.00],
+        [-3650.00, 14242.00],
+        [-3644.00, 15648.00],
+        [-1140.00, 15392.00],
+        [-1140.00, 14626.00],
     ];
 
     static BAT_POSITIONS = [
@@ -54,6 +60,8 @@ class BossManager {
     static _lastBulletSpawnBeat = 0;
     static _bulletSpawnCount = 0;
 
+    static _spawnedStatues = false;
+
     static _currentBoss = null;
 
     static update(time, dt) {
@@ -72,7 +80,12 @@ class BossManager {
             BossManager._spawnedBoss = true;
 
             const bossEntity = new BossEntity();
-            bossEntity.setPosition(BossManager.BOSS_POSITION[0], BossManager.BOSS_POSITION[1]);
+            if (BossManager._phase === 0) {
+                bossEntity.setPosition(BossManager.BOSS_POSITION[0], BossManager.BOSS_POSITION[1]);
+            } else {
+                const spawn = BossManager._chooseBossSpawn();
+                bossEntity.setPosition(spawn[0], spawn[1]);
+            }
             EntityInformation.addEntity(bossEntity);
 
             BossManager._currentBoss = bossEntity;
@@ -122,7 +135,17 @@ class BossManager {
             }
         } else if (this._phase === 3) {
             // now statues moon2W
+            if (!BossManager._spawnedStatues) {
+                BossManager._spawnedStatues = true;
 
+                for (let i = 0; i < BossManager.STATUE_POSITIONS.length; i++) {
+                    const pos = BossManager.STATUE_POSITIONS[i];
+                    const ent = new StatueEntity();
+                    ent.setPosition(pos[0], pos[1]);
+                    ent.setFoundTarget();
+                    EntityInformation.addEntity(ent);
+                }
+            }
         } else if (this._phase === 4) {
             // now bullet hell moon2W
             if (BossManager._phaseDeltaTime > MusicManager.convertBeatToMilliseconds(2)) {
@@ -184,7 +207,7 @@ class BossManager {
     static kill() {
         if (BossManager._phase === 4) {
             const finalText = new BossText(BossManager._currentBoss, BossText.CURSE_YOU_TEXTURE);
-            finalText.forceDuration(8000);
+            finalText.forceDuration(6000);
             AbilityInformation.addAbility(finalText);
         }
 
@@ -212,9 +235,36 @@ class BossManager {
         BossManager._currentBoss = null;
         BossManager._lastBulletSpawnBeat = 0;
         BossManager._bulletSpawnCount = 0;
+        BossManager._spawnedStatues = false;
     }
 
     static canUseAbilities() {
         return StateManager.getCurrentRoom() !== 4 || BossManager._deltaTime > 8000;
+    }
+
+    static _chooseBossSpawn() {
+        const clientEntity = EntityInformation.getClientEntity();
+        if (!clientEntity) {
+            return BossManager.POTENTIAL_SPAWNS[0];
+        }
+
+        const clientPos = clientEntity.getPosition();
+
+        let bestDistance = 0;
+        let bestSpawn = null;
+        for (let i = 0; i < BossManager.POTENTIAL_SPAWNS.length; i++) {
+            const spawn = BossManager.POTENTIAL_SPAWNS[i];
+            const delta = [
+                spawn[0] - clientPos[0],
+                spawn[1] - clientPos[1],
+            ];
+            const distance = MathHelper.magnitude(delta);
+            if (distance > bestDistance) {
+                bestDistance = distance;
+                bestSpawn = spawn;
+            }
+        }
+
+        return bestSpawn ?? BossManager.POTENTIAL_SPAWNS[0];
     }
 }

@@ -14,6 +14,7 @@ window.onload = () => {
     EnemyArrowManager.initialize();
     ParallaxManager.initialize();
     CoolMenuOverlayManager.initialize();
+    TheEndManager.initialize();
 
     Loop.initialize();
 

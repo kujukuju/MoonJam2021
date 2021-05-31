@@ -89,6 +89,7 @@ class SwordSwing extends Ability {
             }
 
             // cant kill behind walls
+            // I dont understand why this isnt prevent behind wall hits.........
             if (!LevelManager.level.canTraceLine(ownerPosition, entity.getPosition())) {
                 continue;
             }

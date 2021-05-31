@@ -405,6 +405,78 @@
                  "visible":true,
                  "x":0,
                  "y":0
+                }, 
+                {
+                 "id":1027,
+                 "image":"GARGOYLE_PLATFORM.png",
+                 "name":"plat1",
+                 "offsetx":-2676,
+                 "offsety":14124,
+                 "opacity":1,
+                 "type":"imagelayer",
+                 "visible":true,
+                 "x":0,
+                 "y":0
+                }, 
+                {
+                 "id":1028,
+                 "image":"GARGOYLE_PLATFORM.png",
+                 "name":"Copy of plat1",
+                 "offsetx":-2026,
+                 "offsety":14124,
+                 "opacity":1,
+                 "type":"imagelayer",
+                 "visible":true,
+                 "x":0,
+                 "y":0
+                }, 
+                {
+                 "id":1029,
+                 "image":"GARGOYLE_PLATFORM.png",
+                 "name":"Copy of Copy of plat1",
+                 "offsetx":-1350,
+                 "offsety":14124,
+                 "opacity":1,
+                 "type":"imagelayer",
+                 "visible":true,
+                 "x":0,
+                 "y":0
+                }, 
+                {
+                 "id":1032,
+                 "image":"GARGOYLE_PLATFORM.png",
+                 "name":"Copy of plat1",
+                 "offsetx":-2680,
+                 "offsety":15486,
+                 "opacity":1,
+                 "type":"imagelayer",
+                 "visible":true,
+                 "x":0,
+                 "y":0
+                }, 
+                {
+                 "id":1031,
+                 "image":"GARGOYLE_PLATFORM.png",
+                 "name":"Copy of Copy of plat1",
+                 "offsetx":-2030,
+                 "offsety":15486,
+                 "opacity":1,
+                 "type":"imagelayer",
+                 "visible":true,
+                 "x":0,
+                 "y":0
+                }, 
+                {
+                 "id":1030,
+                 "image":"GARGOYLE_PLATFORM.png",
+                 "name":"Copy of Copy of Copy of plat1",
+                 "offsetx":-1354,
+                 "offsety":15486,
+                 "opacity":1,
+                 "type":"imagelayer",
+                 "visible":true,
+                 "x":0,
+                 "y":0
                 }],
          "name":"Cathedral",
          "opacity":1,
@@ -20316,12 +20388,12 @@
                          "name":"",
                          "polygon":[
                                 {
-                                 "x":0,
-                                 "y":0
+                                 "x":-107,
+                                 "y":147
                                 }, 
                                 {
-                                 "x":243,
-                                 "y":1161
+                                 "x":55,
+                                 "y":1049
                                 }, 
                                 {
                                  "x":2009,
@@ -29420,52 +29492,6 @@
                         }, 
                         {
                          "height":0,
-                         "id":873,
-                         "name":"",
-                         "point":true,
-                         "properties":[
-                                {
-                                 "name":"delay",
-                                 "type":"int",
-                                 "value":1
-                                }, 
-                                {
-                                 "name":"room",
-                                 "type":"int",
-                                 "value":2
-                                }],
-                         "rotation":0,
-                         "type":"bat-spawn",
-                         "visible":true,
-                         "width":0,
-                         "x":14609,
-                         "y":13264
-                        }, 
-                        {
-                         "height":0,
-                         "id":874,
-                         "name":"",
-                         "point":true,
-                         "properties":[
-                                {
-                                 "name":"delay",
-                                 "type":"int",
-                                 "value":1
-                                }, 
-                                {
-                                 "name":"room",
-                                 "type":"int",
-                                 "value":2
-                                }],
-                         "rotation":0,
-                         "type":"bat-spawn",
-                         "visible":true,
-                         "width":0,
-                         "x":14370,
-                         "y":13088
-                        }, 
-                        {
-                         "height":0,
                          "id":875,
                          "name":"",
                          "point":true,
@@ -29673,29 +29699,6 @@
                         }, 
                         {
                          "height":0,
-                         "id":887,
-                         "name":"",
-                         "point":true,
-                         "properties":[
-                                {
-                                 "name":"delay",
-                                 "type":"int",
-                                 "value":1
-                                }, 
-                                {
-                                 "name":"room",
-                                 "type":"int",
-                                 "value":2
-                                }],
-                         "rotation":0,
-                         "type":"bat-spawn",
-                         "visible":true,
-                         "width":0,
-                         "x":7312,
-                         "y":13085
-                        }, 
-                        {
-                         "height":0,
                          "id":888,
                          "name":"",
                          "point":true,
@@ -29739,29 +29742,6 @@
                          "width":0,
                          "x":12794,
                          "y":14667
-                        }, 
-                        {
-                         "height":0,
-                         "id":890,
-                         "name":"",
-                         "point":true,
-                         "properties":[
-                                {
-                                 "name":"delay",
-                                 "type":"int",
-                                 "value":1
-                                }, 
-                                {
-                                 "name":"room",
-                                 "type":"int",
-                                 "value":2
-                                }],
-                         "rotation":0,
-                         "type":"bat-spawn",
-                         "visible":true,
-                         "width":0,
-                         "x":12676,
-                         "y":15530
                         }, 
                         {
                          "height":0,
@@ -30524,29 +30504,6 @@
                         }, 
                         {
                          "height":0,
-                         "id":930,
-                         "name":"",
-                         "point":true,
-                         "properties":[
-                                {
-                                 "name":"delay",
-                                 "type":"int",
-                                 "value":1
-                                }, 
-                                {
-                                 "name":"room",
-                                 "type":"int",
-                                 "value":2
-                                }],
-                         "rotation":0,
-                         "type":"zombie-spawn",
-                         "visible":true,
-                         "width":0,
-                         "x":13528,
-                         "y":15864
-                        }, 
-                        {
-                         "height":0,
                          "id":934,
                          "name":"",
                          "point":true,
@@ -30705,52 +30662,6 @@
                          "width":0,
                          "x":10868,
                          "y":14408
-                        }, 
-                        {
-                         "height":0,
-                         "id":944,
-                         "name":"",
-                         "point":true,
-                         "properties":[
-                                {
-                                 "name":"delay",
-                                 "type":"int",
-                                 "value":1
-                                }, 
-                                {
-                                 "name":"room",
-                                 "type":"int",
-                                 "value":2
-                                }],
-                         "rotation":0,
-                         "type":"zombie-spawn",
-                         "visible":true,
-                         "width":0,
-                         "x":8540,
-                         "y":13232
-                        }, 
-                        {
-                         "height":0,
-                         "id":945,
-                         "name":"",
-                         "point":true,
-                         "properties":[
-                                {
-                                 "name":"delay",
-                                 "type":"int",
-                                 "value":1
-                                }, 
-                                {
-                                 "name":"room",
-                                 "type":"int",
-                                 "value":2
-                                }],
-                         "rotation":0,
-                         "type":"zombie-spawn",
-                         "visible":true,
-                         "width":0,
-                         "x":8236,
-                         "y":13472
                         }, 
                         {
                          "height":0,
@@ -30935,98 +30846,6 @@
                          "width":0,
                          "x":10136,
                          "y":17768
-                        }, 
-                        {
-                         "height":0,
-                         "id":958,
-                         "name":"",
-                         "point":true,
-                         "properties":[
-                                {
-                                 "name":"delay",
-                                 "type":"int",
-                                 "value":1
-                                }, 
-                                {
-                                 "name":"room",
-                                 "type":"int",
-                                 "value":2
-                                }],
-                         "rotation":0,
-                         "type":"zombie-spawn",
-                         "visible":true,
-                         "width":0,
-                         "x":14164,
-                         "y":17396
-                        }, 
-                        {
-                         "height":0,
-                         "id":959,
-                         "name":"",
-                         "point":true,
-                         "properties":[
-                                {
-                                 "name":"delay",
-                                 "type":"int",
-                                 "value":1
-                                }, 
-                                {
-                                 "name":"room",
-                                 "type":"int",
-                                 "value":2
-                                }],
-                         "rotation":0,
-                         "type":"zombie-spawn",
-                         "visible":true,
-                         "width":0,
-                         "x":14092,
-                         "y":17240
-                        }, 
-                        {
-                         "height":0,
-                         "id":960,
-                         "name":"",
-                         "point":true,
-                         "properties":[
-                                {
-                                 "name":"delay",
-                                 "type":"int",
-                                 "value":1
-                                }, 
-                                {
-                                 "name":"room",
-                                 "type":"int",
-                                 "value":2
-                                }],
-                         "rotation":0,
-                         "type":"zombie-spawn",
-                         "visible":true,
-                         "width":0,
-                         "x":13824,
-                         "y":17508
-                        }, 
-                        {
-                         "height":0,
-                         "id":961,
-                         "name":"",
-                         "point":true,
-                         "properties":[
-                                {
-                                 "name":"delay",
-                                 "type":"int",
-                                 "value":1
-                                }, 
-                                {
-                                 "name":"room",
-                                 "type":"int",
-                                 "value":2
-                                }],
-                         "rotation":0,
-                         "type":"zombie-spawn",
-                         "visible":true,
-                         "width":0,
-                         "x":14324,
-                         "y":17648
                         }, 
                         {
                          "height":0,
@@ -31322,6 +31141,174 @@
                          "width":0,
                          "x":-844,
                          "y":14920
+                        }, 
+                        {
+                         "height":0,
+                         "id":1017,
+                         "name":"",
+                         "polygon":[
+                                {
+                                 "x":0,
+                                 "y":0
+                                }, 
+                                {
+                                 "x":0,
+                                 "y":134
+                                }, 
+                                {
+                                 "x":238,
+                                 "y":138
+                                }, 
+                                {
+                                 "x":236,
+                                 "y":-4
+                                }],
+                         "rotation":0,
+                         "type":"",
+                         "visible":true,
+                         "width":0,
+                         "x":-2610,
+                         "y":14364
+                        }, 
+                        {
+                         "height":0,
+                         "id":1018,
+                         "name":"",
+                         "polygon":[
+                                {
+                                 "x":0,
+                                 "y":0
+                                }, 
+                                {
+                                 "x":-4,
+                                 "y":136
+                                }, 
+                                {
+                                 "x":224,
+                                 "y":136
+                                }, 
+                                {
+                                 "x":228,
+                                 "y":-4
+                                }],
+                         "rotation":0,
+                         "type":"",
+                         "visible":true,
+                         "width":0,
+                         "x":-2610,
+                         "y":15730
+                        }, 
+                        {
+                         "height":0,
+                         "id":1019,
+                         "name":"",
+                         "polygon":[
+                                {
+                                 "x":0,
+                                 "y":0
+                                }, 
+                                {
+                                 "x":0,
+                                 "y":134
+                                }, 
+                                {
+                                 "x":238,
+                                 "y":138
+                                }, 
+                                {
+                                 "x":236,
+                                 "y":-4
+                                }],
+                         "rotation":0,
+                         "type":"",
+                         "visible":true,
+                         "width":0,
+                         "x":-1960,
+                         "y":14366
+                        }, 
+                        {
+                         "height":0,
+                         "id":1020,
+                         "name":"",
+                         "polygon":[
+                                {
+                                 "x":0,
+                                 "y":0
+                                }, 
+                                {
+                                 "x":0,
+                                 "y":134
+                                }, 
+                                {
+                                 "x":238,
+                                 "y":138
+                                }, 
+                                {
+                                 "x":236,
+                                 "y":-4
+                                }],
+                         "rotation":0,
+                         "type":"",
+                         "visible":true,
+                         "width":0,
+                         "x":-1280,
+                         "y":14370
+                        }, 
+                        {
+                         "height":0,
+                         "id":1021,
+                         "name":"",
+                         "polygon":[
+                                {
+                                 "x":0,
+                                 "y":0
+                                }, 
+                                {
+                                 "x":0,
+                                 "y":134
+                                }, 
+                                {
+                                 "x":238,
+                                 "y":138
+                                }, 
+                                {
+                                 "x":236,
+                                 "y":-4
+                                }],
+                         "rotation":0,
+                         "type":"",
+                         "visible":true,
+                         "width":0,
+                         "x":-1290,
+                         "y":15730
+                        }, 
+                        {
+                         "height":0,
+                         "id":1022,
+                         "name":"",
+                         "polygon":[
+                                {
+                                 "x":0,
+                                 "y":0
+                                }, 
+                                {
+                                 "x":0,
+                                 "y":134
+                                }, 
+                                {
+                                 "x":238,
+                                 "y":138
+                                }, 
+                                {
+                                 "x":236,
+                                 "y":-4
+                                }],
+                         "rotation":0,
+                         "type":"",
+                         "visible":true,
+                         "width":0,
+                         "x":-1966,
+                         "y":15730
                         }],
                  "opacity":1,
                  "type":"objectgroup",
@@ -31455,20 +31442,12 @@
                          "name":"",
                          "polyline":[
                                 {
-                                 "x":0,
-                                 "y":0
+                                 "x":-9,
+                                 "y":9
                                 }, 
                                 {
-                                 "x":100,
-                                 "y":33
-                                }, 
-                                {
-                                 "x":263,
-                                 "y":803
-                                }, 
-                                {
-                                 "x":160,
-                                 "y":942
+                                 "x":151,
+                                 "y":963
                                 }],
                          "rotation":0,
                          "type":"",
@@ -32030,8 +32009,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":1027,
- "nextobjectid":1015,
+ "nextlayerid":1033,
+ "nextobjectid":1023,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.3.1",

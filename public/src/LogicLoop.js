@@ -22,5 +22,6 @@ class LogicLoop {
         ParallaxManager.update(time, dt);
         CoolMenuOverlayManager.update(time, dt);
         BossManager.update(time, dt);
+        TheEndManager.update(time, dt);
     }
 }

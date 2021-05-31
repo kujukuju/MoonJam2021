@@ -3,6 +3,8 @@ class DeadAbility extends Ability {
     static GHOUL_TEXTURE = PIXI.Texture.from('assets/GHOUL SPRITE DEATH.png');
     static ZOMBIE_TEXTURE = PIXI.Texture.from('assets/ZOMBIE SPRITE DEATH.png');
     static VAMP_TEXTURE = PIXI.Texture.from('assets/VAMP SPRITE DEAD.png');
+    static STATUE_TEXTURE = PIXI.Texture.from('assets/RUBBLE_3.png');
+    static MOON_TEXTURE = PIXI.Texture.from('assets/MOON_SPRITE_DEAD.png');
 
     _sprite;
     _deltaTime;

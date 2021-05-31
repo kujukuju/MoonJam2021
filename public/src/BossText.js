@@ -31,13 +31,12 @@ class BossText extends Ability {
     update(time, dt) {
         this._deltaTime += dt;
 
-        if (this._owner.isDead()) {
+        if (this._owner.isDead() && this._duration === BossText.DURATION) {
             this._deltaTime = BossText.DURATION + 1;
         }
 
         const position = this._owner.getPosition();
         const height = this._owner.getHeight();
-
 
         this._sprite.position.x = position[0];
         this._sprite.position.y = position[1] - height;
