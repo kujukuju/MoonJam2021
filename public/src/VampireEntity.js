@@ -1,17 +1,15 @@
-class ZombieEntity extends EnemyEntity {
-    static TEXTURE = PIXI.Texture.from('assets/zombie-sheet_recolour.png');
+class VampireEntity extends EnemyEntity {
+    static TEXTURE = PIXI.Texture.from('assets/ghoul-sheet.png');
     static TEXTURES = [
-        new PIXI.Texture(ZombieEntity.TEXTURE, new PIXI.Rectangle(0, 0, 290, 421)),
-        new PIXI.Texture(ZombieEntity.TEXTURE, new PIXI.Rectangle(290, 0, 290, 421)),
-        new PIXI.Texture(ZombieEntity.TEXTURE, new PIXI.Rectangle(290 * 2, 0, 290, 421)),
-        new PIXI.Texture(ZombieEntity.TEXTURE, new PIXI.Rectangle(290 * 3, 0, 290, 421)),
-        new PIXI.Texture(ZombieEntity.TEXTURE, new PIXI.Rectangle(290 * 4, 0, 290, 421)),
-        new PIXI.Texture(ZombieEntity.TEXTURE, new PIXI.Rectangle(290 * 5, 0, 290, 421)),
+        new PIXI.Texture(VampireEntity.TEXTURE, new PIXI.Rectangle(0, 0, 500, 445)),
+        new PIXI.Texture(VampireEntity.TEXTURE, new PIXI.Rectangle(500, 0, 500, 445)),
+        new PIXI.Texture(VampireEntity.TEXTURE, new PIXI.Rectangle(500 * 2, 0, 500, 445)),
+        new PIXI.Texture(VampireEntity.TEXTURE, new PIXI.Rectangle(500 * 3, 0, 500, 445)),
     ];
 
     static ANCHOR = [
-        132 / 290,
-        392 / 421,
+        106 / 500,
+        408 / 445,
     ];
 
     _sprite;
@@ -24,11 +22,11 @@ class ZombieEntity extends EnemyEntity {
     constructor() {
         super();
 
-        this._sprite = new PIXI.AnimatedSprite(ZombieEntity.TEXTURES);
-        this._sprite.anchor.x = ZombieEntity.ANCHOR[0];
-        this._sprite.anchor.y = ZombieEntity.ANCHOR[1];
-        this._sprite.scale.x = 1;
-        this._sprite.scale.y = 1;
+        this._sprite = new PIXI.AnimatedSprite(GhoulEntity.TEXTURES);
+        this._sprite.anchor.x = GhoulEntity.ANCHOR[0];
+        this._sprite.anchor.y = GhoulEntity.ANCHOR[1];
+        this._sprite.scale.x = 0.8;
+        this._sprite.scale.y = 0.8;
         this._sprite.visible = false;
         this._sprite.alpha = 0;
         this._sprite.gotoAndStop(0);
@@ -63,14 +61,13 @@ class ZombieEntity extends EnemyEntity {
             this._sprite.scale.x = Math.abs(this._sprite.scale.x);
         }
 
-        // TODO with zombie update this to do it on half beats
         const beat = Math.floor(this._getRelativeBeat(time));
         if (beat > this._lastFrameBeat) {
             this._lastFrameBeat = beat;
 
             this._currentFrame++;
 
-            this._sprite.gotoAndStop(this._currentFrame % (this._sprite.textures.length - 2));
+            this._sprite.gotoAndStop(this._currentFrame % this._sprite.textures.length);
         }
 
         if (this._forcedFrame !== -1) {
@@ -103,7 +100,7 @@ class ZombieEntity extends EnemyEntity {
 
     attack() {
         // do damage, make noise
-        AbilityInformation.addAbility(new ZombieBite(this));
+        AbilityInformation.addAbility(new BatBite(this));
     }
 
     kill(gun) {
@@ -111,8 +108,9 @@ class ZombieEntity extends EnemyEntity {
 
         const id = Entity.HUMANOID_HIT.play();
         AudioStuff.initialize3D(Entity.HUMANOID_HIT, id, this._position);
+        // TODO position this sound
 
-        AbilityInformation.addAbility(new DeadAbility(this, DeadAbility.ZOMBIE_TEXTURE));
+        AbilityInformation.addAbility(new DeadAbility(this, DeadAbility.GHOUL_TEXTURE));
     }
 
     getAttackChance() {
@@ -129,25 +127,21 @@ class ZombieEntity extends EnemyEntity {
         this._sprite.destroy();
     }
 
-    _getMaxSpeed() {
-        return Entity.MAX_SPEED * this._forcedMaxSpeedMul * 0.75;
-    }
-
     _getRelativeBeat(time) {
-        return MusicManager.getCurrentEventBeat(time, 'lead');
+        return MusicManager.getCurrentEventBeat(time, 'bass');
     }
 
     _getBeatDuration(time) {
         const beat = this._getRelativeBeat(time);
-        return MusicManager.getEventDuration(Math.round(beat), 'lead');
+        return MusicManager.getEventDuration(Math.round(beat), 'bass');
     }
 
     _getApproximateBeatTime(beat) {
-        return MusicManager.getApproximateTimeForEvent(Math.round(beat), 'lead');
+        return MusicManager.getApproximateTimeForEvent(Math.round(beat), 'bass');
     }
 
     _getNextBeatTimeAfterTime(time) {
-        return MusicManager.getEventTimeAfterTime(time, 'lead');
+        return MusicManager.getEventTimeAfterTime(time, 'bass');
     }
 
     // _getRelativeBeat(time) {

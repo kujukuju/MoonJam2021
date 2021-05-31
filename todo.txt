@@ -1,26 +1,12 @@
-add other other 2 gates
-
 --- 1 hour
 
 boss fight mechanics??
 
 REWORK OSU BECAUSE IT DOESNT WORK
 
---- STRETCH GOALS HERE
-
-the city in the background of the bridge
-
---
-
-FIX LAG?? HOW THOUGH
-
 --- 8 hours?
 
 --- stretch
-
-osu mode should use actually not stupid data from the music to get the next sound time for a specific sound
-then find the closest to next, but not <= time, and sample that, and continue
-also with this random 20% chance to go to beats
 
 ultimate ability dashes?
 

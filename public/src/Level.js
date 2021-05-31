@@ -370,12 +370,12 @@ class Level {
                                     }
 
                                     // TODO hacky test stuff
-                                    if (room === 1 && object.id !== 764) {
-                                        continue;
-                                    }
-                                    if (room === 2 && object.id !== 966) {
-                                        continue;
-                                    }
+                                    // if (room === 1 && object.id !== 764) {
+                                    //     continue;
+                                    // }
+                                    // if (room === 2 && object.id !== 966) {
+                                    //     continue;
+                                    // }
 
                                     if (!this._enemySpawns[room]) {
                                         this._enemySpawns[room] = [];
@@ -396,12 +396,12 @@ class Level {
                                     }
 
                                     // TODO hacky test stuff
-                                    if (room === 1 && object.id !== 764) {
-                                        continue;
-                                    }
-                                    if (room === 2 && object.id !== 966) {
-                                        continue;
-                                    }
+                                    // if (room === 1 && object.id !== 764) {
+                                    //     continue;
+                                    // }
+                                    // if (room === 2 && object.id !== 966) {
+                                    //     continue;
+                                    // }
 
                                     if (!this._enemySpawns[room]) {
                                         this._enemySpawns[room] = [];
@@ -422,12 +422,12 @@ class Level {
                                     }
 
                                     // TODO hacky test stuff
-                                    if (room === 1 && object.id !== 764) {
-                                        continue;
-                                    }
-                                    if (room === 2 && object.id !== 966) {
-                                        continue;
-                                    }
+                                    // if (room === 1 && object.id !== 764) {
+                                    //     continue;
+                                    // }
+                                    // if (room === 2 && object.id !== 966) {
+                                    //     continue;
+                                    // }
 
                                     if (!this._enemySpawns[room]) {
                                         this._enemySpawns[room] = [];
